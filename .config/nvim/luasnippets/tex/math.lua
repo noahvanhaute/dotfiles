@@ -156,7 +156,7 @@ ls.add_snippets("tex", {
 
 	-- subscript
 	s(
-		{ trig = "([%a])ss", regTrig = true, wordTrig = false, snippetType = "autosnippet" },
+		{ trig = "([%a%)%]%}])ss", regTrig = true, wordTrig = false, snippetType = "autosnippet" },
 		fmta("<>_{<>}", { f(function(_, snip)
 			return snip.captures[1]
 		end), i(1) }),
@@ -165,7 +165,7 @@ ls.add_snippets("tex", {
 
 	-- text subscript
 	s(
-		{ trig = "([%a])ts", regTrig = true, wordTrig = false, snippetType = "autosnippet" },
+		{ trig = "([%a%)%]%}])ts", regTrig = true, wordTrig = false, snippetType = "autosnippet" },
 		fmta("<>_{\\text{<>}}", { f(function(_, snip)
 			return snip.captures[1]
 		end), i(1) }),
