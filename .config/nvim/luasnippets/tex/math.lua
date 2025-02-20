@@ -133,6 +133,19 @@ ls.add_snippets("tex", {
 		{ condition = in_mathzone }
 	),
 
+	-- expanding brackets
+	s({ trig = "lrb", snippetType = "autosnippet" }, fmta("\\left(<>\\right)", { i(1) }), { condition = in_mathzone }),
+
+	-- expanding square brackets
+	s({ trig = "lrs", snippetType = "autosnippet" }, fmta("\\left[<>\\right]", { i(1) }), { condition = in_mathzone }),
+
+	-- expanding curly brackets
+	s(
+		{ trig = "lrc", snippetType = "autosnippet" },
+		fmta("\\left\\{<>\\right\\}", { i(1) }),
+		{ condition = in_mathzone }
+	),
+
 	-- text formatting
 	s({ trig = "tt", snippetType = "autosnippet" }, fmta("\\text{<>}", { i(1) }), { condition = in_mathzone }),
 
