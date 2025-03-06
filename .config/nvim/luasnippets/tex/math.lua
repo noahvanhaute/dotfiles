@@ -68,7 +68,7 @@ end
 -- rest of the snippets
 ls.add_snippets("tex", {
 	-- inline math
-	s("im", fmta("\\(<>\\) ", { i(1) })),
+	s("im", fmta("\\(<>\\)", { i(1) })),
 
 	-- display math
 	s("dm", fmta("\\[<>\\]", { i(1) })),
@@ -186,13 +186,13 @@ ls.add_snippets("tex", {
 	),
 
 	-- multiplication dot
-	s({ trig = "cd", snippetType = "autosnippet" }, t("\\cdot "), { condition = in_mathzone }),
+	s({ trig = "cd", snippetType = "autosnippet" }, t("\\cdot"), { condition = in_mathzone }),
 
 	-- multiplication X
-	s({ trig = "xx", snippetType = "autosnippet" }, t("\\times "), { condition = in_mathzone }),
+	s({ trig = "xx", snippetType = "autosnippet" }, t("\\times"), { condition = in_mathzone }),
 
 	-- division
-	s({ trig = "div", snippetType = "autosnippet" }, t("\\div "), { condition = in_mathzone }),
+	s({ trig = "div", snippetType = "autosnippet" }, t("\\div"), { condition = in_mathzone }),
 
 	-- fraction
 	s(
@@ -241,24 +241,24 @@ ls.add_snippets("tex", {
 	s({ trig = "sq", snippetType = "autosnippet" }, fmta("\\sqrt{<>}", { i(1) }), { condition = in_mathzone }),
 
 	-- centered elipses
-	s({ trig = "cel", snippetType = "autosnippet" }, t("\\cdots "), { condition = in_mathzone }),
+	s({ trig = "cel", snippetType = "autosnippet" }, t("\\cdots"), { condition = in_mathzone }),
 
 	-- elipses
-	s({ trig = "el", snippetType = "autosnippet" }, t("\\ldots "), { condition = in_mathzone }),
+	s({ trig = "el", snippetType = "autosnippet" }, t("\\ldots"), { condition = in_mathzone }),
 
 	-- differential
 	-- requires `\newcommand*\diff{\mathop{}\!\mathrm{d}}`
-	s({ trig = "df", snippetType = "autosnippet" }, t("\\diff "), { condition = in_mathzone }),
+	s({ trig = "df", snippetType = "autosnippet" }, t("\\diff"), { condition = in_mathzone }),
 
 	-- partial
-	s({ trig = "pt", snippetType = "autosnippet" }, t("\\partial "), { condition = in_mathzone }),
+	s({ trig = "pt", snippetType = "autosnippet" }, t("\\partial"), { condition = in_mathzone }),
 
 	-- higher order differential
 	-- requires `\newcommand*\Diff[1]{\mathop{}\!\mathrm{d^#1}}`
 	s({ trig = "Df", snippetType = "autosnippet" }, fmta("\\Diff{<>}", { i(1) }), { condition = in_mathzone }),
 
 	-- higher order partial
-	s({ trig = "Pt", snippetType = "autosnippet" }, fmta("\\partial^{<>} ", { i(1) }), { condition = in_mathzone }),
+	s({ trig = "Pt", snippetType = "autosnippet" }, fmta("\\partial^{<>}", { i(1) }), { condition = in_mathzone }),
 
 	-- derivative
 	-- requires `\newcommand*\diff{\mathop{}\!\mathrm{d}}`
@@ -301,13 +301,13 @@ ls.add_snippets("tex", {
 	s({ trig = "dddot", snippetType = "autosnippet" }, fmta("\\dddot{<>}", { i(1) }), { condition = in_mathzone }),
 
 	-- integral
-	s({ trig = "int", snippetType = "autosnippet" }, t("\\int "), { condition = in_mathzone }),
+	s({ trig = "int", snippetType = "autosnippet" }, t("\\int"), { condition = in_mathzone }),
 
 	-- double integral
-	s({ trig = "iint", snippetType = "autosnippet" }, t("\\iint "), { condition = in_mathzone }),
+	s({ trig = "iint", snippetType = "autosnippet" }, t("\\iint"), { condition = in_mathzone }),
 
 	-- triple integral
-	s({ trig = "iiint", snippetType = "autosnippet" }, t("\\iiint "), { condition = in_mathzone }),
+	s({ trig = "iiint", snippetType = "autosnippet" }, t("\\iiint"), { condition = in_mathzone }),
 
 	-- defined integral
 	s(
