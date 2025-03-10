@@ -31,3 +31,4 @@ ShearHog
 radiused
 thermo-mechanical
 JabRef
+uncalculated

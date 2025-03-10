@@ -59,6 +59,12 @@ return {
 				-- for example, in C this would take you to the header.
 				map("gD", vim.lsp.buf.declaration, "[G]oto [D]eclaration")
 
+				-- go to next diagnostic
+				map("<leader>nd", vim.diagnostic.goto_next, "[N]ext [D]iagnostic")
+
+				-- go to previous diagnostic
+				map("<leader>pd", vim.diagnostic.goto_prev, "[P]previous [D]iagnostic")
+
 				-- highlight references of the word under the cursor
 				-- `:help CursorHold`
 				-- second autocommand clears on cursor move
