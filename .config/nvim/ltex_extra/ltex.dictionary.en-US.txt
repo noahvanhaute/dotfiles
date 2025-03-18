@@ -32,3 +32,4 @@ radiused
 thermo-mechanical
 JabRef
 uncalculated
+TikZ
