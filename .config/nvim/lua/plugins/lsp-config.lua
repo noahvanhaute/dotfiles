@@ -111,6 +111,13 @@ return {
 		--  - settings (table): override the default settings passed when initializing the server
 		local servers = {
 			ltex = {
+				settings = {
+					ltex = {
+						latex = {
+							commands = { ["\\ce{}"] = "ignore" },
+						},
+					},
+				},
 				on_attach = function(client, bufnr)
 					-- rest of your on_attach process.
 					require("ltex_extra").setup({
