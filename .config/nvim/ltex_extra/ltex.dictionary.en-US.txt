@@ -3,12 +3,6 @@ polycrystalline
 indexable
 Polycrystalline
 spalling
-AlCrN
-AlCrN-based
-TiSi-based
-TiCN
-ZrN
-TiAlN
 Nanostructured
 Inconel
 Superalloy
