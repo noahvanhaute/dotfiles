@@ -114,7 +114,11 @@ return {
 				settings = {
 					ltex = {
 						latex = {
-							commands = { ["\\ce{}"] = "ignore" },
+							commands = {
+								["\\ce{}"] = "ignore",
+								["\\pgfplotsset{}"] = "ignore",
+								["\\UseTblrLibrary{}"] = "ignore",
+							},
 						},
 					},
 				},

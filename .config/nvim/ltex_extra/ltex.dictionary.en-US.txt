@@ -27,3 +27,4 @@ thermo-mechanical
 JabRef
 uncalculated
 TikZ
+Haute
