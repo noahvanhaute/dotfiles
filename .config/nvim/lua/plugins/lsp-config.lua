@@ -116,6 +116,7 @@ return {
 						latex = {
 							commands = {
 								["\\ce{}"] = "ignore",
+								["\\lstinputlisting[]{}"] = "ignore",
 								["\\pgfplotsset{}"] = "ignore",
 								["\\UseTblrLibrary{}"] = "ignore",
 							},
