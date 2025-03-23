@@ -118,6 +118,7 @@ return {
 								["\\ce{}"] = "ignore",
 								["\\lstinputlisting[]{}"] = "ignore",
 								["\\pgfplotsset{}"] = "ignore",
+								["\\qtyrange[]"] = "ignore",
 								["\\UseTblrLibrary{}"] = "ignore",
 							},
 						},
