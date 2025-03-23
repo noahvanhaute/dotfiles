@@ -115,6 +115,7 @@ return {
 					ltex = {
 						latex = {
 							commands = {
+								["\\bamadegree{}"] = "ignore",
 								["\\ce{}"] = "ignore",
 								["\\lstinputlisting[]{}"] = "ignore",
 								["\\pgfplotsset{}"] = "ignore",
