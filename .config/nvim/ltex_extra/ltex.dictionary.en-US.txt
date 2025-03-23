@@ -28,3 +28,7 @@ JabRef
 uncalculated
 TikZ
 Haute
+Jolan
+Vanderstuyf
+Ottschytsch
+Warfield

@@ -122,6 +122,7 @@ return {
 								["\\qty{}{}"] = "dummy",
 								["\\qtyrange[]{}{}"] = "dummy",
 								["\\texorpdfstring{}{}"] = "dummy",
+								["\\unit{}"] = "ignore",
 								["\\UseTblrLibrary{}"] = "ignore",
 							},
 						},
