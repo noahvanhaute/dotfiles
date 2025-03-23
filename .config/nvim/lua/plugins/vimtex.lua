@@ -1,13 +1,15 @@
 return {
 	"lervag/vimtex",
 	lazy = false,
-	-- set pdf viewer
+
 	init = function()
+		-- set pdf viewer
 		if vim.fn.has("win32") == 1 then
 			vim.g.vimtex_view_method = "sioyek"
 		else
 			vim.g.vimtex_view_method = "zathura"
 		end
+
 		-- don't open QuickFix for warnings only
 		vim.g.vimtex_quickfix_open_on_warning = false
 
