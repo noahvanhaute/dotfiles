@@ -121,6 +121,7 @@ return {
 								["\\pgfplotsset{}"] = "ignore",
 								["\\qty{}{}"] = "dummy",
 								["\\qtyrange[]{}{}"] = "dummy",
+								["\\texorpdfstring{}{}"] = "dummy",
 								["\\UseTblrLibrary{}"] = "ignore",
 							},
 						},
