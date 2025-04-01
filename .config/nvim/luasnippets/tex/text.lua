@@ -72,4 +72,7 @@ ls.add_snippets("tex", {
 
 	-- clever reference
 	s("cc", fmta("\\cref{<>}", { i(1) })),
+
+	-- clever reference
+	s("CC", fmta("\\Cref{<>}", { i(1) })),
 })
