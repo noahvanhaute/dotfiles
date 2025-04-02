@@ -15,7 +15,7 @@ ls.add_snippets("tex", {
 			[=[
 			\begin{tikzpicture}
 				<>
-			\end{tikzpicuture}
+			\end{tikzpicture}
 			]=],
 			{ i(1) }
 		)
