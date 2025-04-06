@@ -44,6 +44,23 @@ ls.add_snippets("tex", {
 		)
 	),
 
+	-- figure
+	s(
+		"fg",
+		fmta(
+			[=[
+			\begin{figure}[H]
+				\centering
+				\includegraphics[<>]{<>}
+				\caption{<>}
+				\label{fig:<>}
+			\end{figure}
+
+			]=],
+			{ i(1), i(2), i(3), i(4) }
+		)
+	),
+
 	-- TikZ figure
 	s(
 		"tfg",
