@@ -1,0 +1,22 @@
+\mode<presentation>
+
+\defbeamertemplate*{frametitle}{nvhslides}[1][]{
+	\ifx\insertframesubtitle\@empty%
+		{\usebeamerfont{frametitle}\insertframetitle\par}%
+	\else%
+		{\usebeamerfont{frametitle}\insertframetitle\par}%
+		{\usebeamercolor[fg]{framesubtitle}\usebeamerfont{framesubtitle}\insertframesubtitle}%
+	\fi%
+}
+
+\defbeamertemplate*{footline}{nvhslides}{
+	\hfill%
+	\raisebox{2em}[0pt][0pt]{%
+		\usebeamercolor[fg]{page number in head/foot}%
+		\usebeamerfont{page number in head/foot}%
+		\insertframenumber%
+		\hspace{\dimexpr(\paperwidth-\linewidth)/2\relax}%
+	}%
+}
+
+\mode<all>

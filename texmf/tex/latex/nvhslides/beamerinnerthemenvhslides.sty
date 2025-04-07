@@ -1,0 +1,27 @@
+\mode<presentation>
+
+\defbeamertemplate*{title page}{nvhslides}[1][]{
+	\vfill%
+	\centering%
+	\ifx\insertsubtitle\@empty%
+		{\usebeamercolor[fg]{title}\usebeamerfont{title}\inserttitle\par}%
+		\vspace{0.5em}%
+		{\usebeamercolor[fg]{author}\usebeamerfont{author}\insertauthor\par}%
+		\vspace{0.2em}%
+		{\usebeamercolor[fg]{date}\usebeamerfont{date}\insertdate}%
+	\else%
+		{\usebeamercolor[fg]{title}\usebeamerfont{title}\inserttitle\par}%
+		{\usebeamercolor[fg]{subtitle}\usebeamerfont{subtitle}\insertsubtitle\par}%
+		\vspace{0.5em}%
+		{\usebeamercolor[fg]{author}\usebeamerfont{author}\insertauthor\par}%
+		\vspace{0.2em}%
+		{\usebeamercolor[fg]{date}\usebeamerfont{date}\insertdate\par}%
+	\fi
+	\vfill
+}
+
+\setbeamertemplate{itemize item}[circle]
+\setbeamertemplate{itemize subitem}[circle]
+\setbeamertemplate{itemize subsubitem}[circle]
+
+\mode<all>
