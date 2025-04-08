@@ -3,24 +3,17 @@
 \defbeamertemplate*{title page}{nvhslides}[1][]{
 	\vfill%
 	\centering%
+	{\usebeamercolor[fg]{title}\usebeamerfont{title}\inserttitle\par}%
 	\ifx\insertsubtitle\@empty%
-		{\usebeamercolor[fg]{title}\usebeamerfont{title}\inserttitle\par}%
-		\vspace{0.5em}%
-		{\usebeamercolor[fg]{author}\usebeamerfont{author}\insertauthor\par}%
-		\vspace{0.2em}%
-		{\usebeamercolor[fg]{date}\usebeamerfont{date}\insertdate}%
-		\vspace{0.2em}%
-		\inserttitlegraphic%
 	\else%
-		{\usebeamercolor[fg]{title}\usebeamerfont{title}\inserttitle\par}%
 		{\usebeamercolor[fg]{subtitle}\usebeamerfont{subtitle}\insertsubtitle\par}%
-		\vspace{0.5em}%
-		{\usebeamercolor[fg]{author}\usebeamerfont{author}\insertauthor\par}%
-		\vspace{0.2em}%
-		{\usebeamercolor[fg]{date}\usebeamerfont{date}\insertdate\par}%
-		\vspace{0.2em}%
-		\inserttitlegraphic%
 	\fi
+	\vspace{0.5em}%
+	{\usebeamercolor[fg]{author}\usebeamerfont{author}\insertauthor\par}%
+	\vspace{0.2em}%
+	{\usebeamercolor[fg]{date}\usebeamerfont{date}\insertdate}%
+	\vspace{0.2em}%
+	\inserttitlegraphic%
 	\vfill
 }
 
