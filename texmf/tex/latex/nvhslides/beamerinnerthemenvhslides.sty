@@ -17,6 +17,16 @@
 	\vfill
 }
 
+\defbeamertemplate*{section page}{nvhslides}[1][]{
+	\vfill%
+	{\usebeamercolor[fg]{section title}\usebeamerfont{section title}\insertsection\par}%
+	\ifx\sectionSubtitle\@empty%
+	\else%
+		{\usebeamercolor[fg]{framesubtitle}\usebeamerfont{framesubtitle}\sectionSubtitle}%
+	\fi
+	\vfill%
+}
+
 \setbeamertemplate{itemize item}[circle]
 \setbeamertemplate{itemize subitem}[circle]
 \setbeamertemplate{itemize subsubitem}[circle]
