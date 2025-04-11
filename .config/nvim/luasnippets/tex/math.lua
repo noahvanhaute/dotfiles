@@ -82,7 +82,6 @@ ls.add_snippets("tex", {
                 <>
                 \label{eq:<>}
             \end{equation}
-
             ]=],
 			{ i(1), i(2) }
 		)
@@ -97,7 +96,6 @@ ls.add_snippets("tex", {
                 <>
                 \label{eq:<>}
             \end{align}
-
             ]=],
 			{ i(1), i(2) }
 		)
@@ -111,7 +109,6 @@ ls.add_snippets("tex", {
             \begin{array}{<>}
                 <>
             \end{array}
-
             ]=],
 			{ i(2), i(1) }
 		),
@@ -126,7 +123,6 @@ ls.add_snippets("tex", {
             \begin{bmatrix}
                 <>
             \end{bmatrix}
-
             ]=],
 			{ i(1) }
 		),

@@ -14,7 +14,6 @@ ls.add_snippets("tex", {
 		fmta(
 			[=[
 			\chapter{<>}
-
 			]=],
 			{ i(1) }
 		)
@@ -26,7 +25,6 @@ ls.add_snippets("tex", {
 		fmta(
 			[=[
 			\section{<>}
-
 			]=],
 			{ i(1) }
 		)
@@ -38,7 +36,6 @@ ls.add_snippets("tex", {
 		fmta(
 			[=[
 			\paragraph{<>}
-
 			]=],
 			{ i(1) }
 		)
@@ -55,7 +52,6 @@ ls.add_snippets("tex", {
 				\caption{<>}
 				\label{fig:<>}
 			\end{figure}
-
 			]=],
 			{ i(1), i(2), i(3), i(4) }
 		)
@@ -72,7 +68,6 @@ ls.add_snippets("tex", {
 				\caption{<>}
 				\label{fig:<>}
 			\end{figure}
-
 			]=],
 			{ i(1), i(2), i(3) }
 		)
