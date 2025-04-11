@@ -30,6 +30,17 @@ ls.add_snippets("tex", {
 		)
 	),
 
+	-- subsection
+	s(
+		"su",
+		fmta(
+			[=[
+			\subsection{<>}
+			]=],
+			{ i(1) }
+		)
+	),
+
 	-- paragraph
 	s(
 		"pa",
