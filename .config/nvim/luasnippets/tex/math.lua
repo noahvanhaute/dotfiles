@@ -73,6 +73,10 @@ ls.add_snippets("tex", {
 	-- display math
 	s("dm", fmta("\\[<>\\]", { i(1) })),
 
+	-- chemical equation
+	-- requires mhchem package
+	s({ trig = "ce", snippetType = "autosnippet" }, fmta("\\ce{<>}", { i(1) }), { condition = in_mathzone }),
+
 	-- equation environment
 	s(
 		"eq",

@@ -87,4 +87,8 @@ ls.add_snippets("tex", {
 
 	-- clever reference
 	s("CC", fmta("\\Cref{<>}", { i(1) })),
+
+	-- chemical equation
+	-- requires mhchem package
+	s("ce", fmta("\\ce{<>}", { i(1) })),
 })
