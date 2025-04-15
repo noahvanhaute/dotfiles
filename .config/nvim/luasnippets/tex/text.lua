@@ -52,6 +52,19 @@ ls.add_snippets("tex", {
 		)
 	),
 
+	-- itemize
+	s(
+		"iz",
+		fmta(
+			[=[
+			\begin{itemize}
+				\item <>
+			\end{itemize}
+			]=],
+			{ i(1) }
+		)
+	),
+
 	-- figure
 	s(
 		"fg",
@@ -86,6 +99,9 @@ ls.add_snippets("tex", {
 
 	-- label
 	s("la", fmta("\\label{<>}", { i(1) })),
+
+	-- item
+	s("it", t("\\item ")),
 
 	-- citation
 	s("ci", fmta("\\cite{<>}", { i(1) })),
