@@ -65,6 +65,19 @@ ls.add_snippets("tex", {
 		)
 	),
 
+	-- enumerate
+	s(
+		"en",
+		fmta(
+			[=[
+			\begin{enumerate}
+				\item <>
+			\end{enumerate}
+			]=],
+			{ i(1) }
+		)
+	),
+
 	-- figure
 	s(
 		"fg",
