@@ -41,3 +41,4 @@ undissociated
 Nernst
 Uncalculated
 Pourbaix
+anodic
