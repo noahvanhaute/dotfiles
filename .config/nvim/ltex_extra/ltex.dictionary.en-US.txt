@@ -45,3 +45,6 @@ anodic
 oxidations
 overpotential
 Butler-Volmer
+Popov
+calomel
+SCE
