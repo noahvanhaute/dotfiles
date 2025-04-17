@@ -48,3 +48,4 @@ Butler-Volmer
 Popov
 calomel
 SCE
+Tafel
