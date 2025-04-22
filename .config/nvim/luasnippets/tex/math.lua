@@ -23,7 +23,7 @@ local trig2 = {
 	{ "d", "\\delta" },
 	{ "D", "\\Delta" },
 	{ "ep", "\\epsilon" },
-	{ "vep", "\\epsilon" },
+	{ "vep", "\\varepsilon" },
 	{ "z", "\\zeta" },
 	{ "et", "\\eta" },
 	{ "th", "\\theta" },
