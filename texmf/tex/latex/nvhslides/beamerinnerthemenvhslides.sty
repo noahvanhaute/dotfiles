@@ -3,12 +3,18 @@
 \defbeamertemplate*{title page}{nvhslides}[1][]{
 	\vfill%
 	\centering%
-	{\usebeamercolor[fg]{title}\usebeamerfont{title}\inserttitle\par}%
+	\hfill%
+	\begin{beamercolorbox}[wd=12cm,center,#1]{title page header}
+		{\usebeamercolor[fg]{title}\usebeamerfont{title}\inserttitle\par}%
+	\end{beamercolorbox}
+	% two hfills are needed, one just gives a flush right
+	% see https://tex.stackexchange.com/questions/6370/how-to-center-a-beamercolorbox
+	\hfill\hfill\par%
 	\ifx\insertsubtitle\@empty%
 	\else%
 		{\usebeamercolor[fg]{subtitle}\usebeamerfont{subtitle}\insertsubtitle\par}%
 	\fi
-	\vspace{0.5em}%
+	\vspace{0.8em}%
 	{\usebeamercolor[fg]{author}\usebeamerfont{author}\insertauthor\par}%
 	\vspace{0.2em}%
 	{\usebeamercolor[fg]{date}\usebeamerfont{date}\insertdate}%
