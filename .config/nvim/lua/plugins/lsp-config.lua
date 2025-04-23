@@ -133,6 +133,7 @@ return {
 								["\\useinnertheme{}"] = "ignore",
 								["\\useoutertheme{}"] = "ignore",
 								["\\UseTblrLibrary{}"] = "ignore",
+								["\\usetheme{}"] = "ignore",
 							},
 						},
 					},
