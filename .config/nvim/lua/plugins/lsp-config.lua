@@ -111,6 +111,12 @@ return {
 		--  - settings (table): override the default settings passed when initializing the server
 		local servers = {
 			ltex = {
+				on_attach = function(client, bufnr)
+					-- rest of your on_attach process.
+					require("ltex_extra").setup({
+						path = (vim.fn.stdpath("config")) .. "/ltex_extra",
+					})
+				end,
 				settings = {
 					ltex = {
 						latex = {
@@ -138,12 +144,6 @@ return {
 						},
 					},
 				},
-				on_attach = function(client, bufnr)
-					-- rest of your on_attach process.
-					require("ltex_extra").setup({
-						path = (vim.fn.stdpath("config")) .. "/ltex_extra",
-					})
-				end,
 			},
 			lua_ls = {
 				settings = {
