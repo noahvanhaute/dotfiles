@@ -7,7 +7,7 @@
   "conform.nvim": { "branch": "master", "commit": "372fc521f8421b7830ea6db4d6ea3bae1c77548c" },
   "fidget.nvim": { "branch": "main", "commit": "d9ba6b7bfe29b3119a610892af67602641da778e" },
   "fzf": { "branch": "master", "commit": "d24b58ef3fc6d6d2c43e07a44e0f757b9bdfbeff" },
-  "fzf-lua": { "branch": "main", "commit": "0fcb12538f1d0c32330327e0e10b3cd85dda0e38" },
+  "fzf-lua": { "branch": "main", "commit": "23dce7340eecc74cfd933401e1690b8416d7ff86" },
   "fzf.vim": { "branch": "master", "commit": "3cb44a8ba588e1ada409af495bdc6a4d2d37d5da" },
   "lazy.nvim": { "branch": "main", "commit": "6c3bda4aca61a13a9c63f1c1d1b16b9d3be90d7a" },
   "lazydev.nvim": { "branch": "main", "commit": "2367a6c0a01eb9edb0464731cc0fb61ed9ab9d2c" },
