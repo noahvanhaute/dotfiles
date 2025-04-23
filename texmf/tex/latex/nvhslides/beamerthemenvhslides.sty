@@ -1,7 +1,6 @@
 \mode<presentation>
 
-\RequirePackage[sfdefault,scale=0.91]{plex-sans}
-\RequirePackage{fourier}
+\RequirePackage{unicode-math}
 \RequirePackage{tikz}
 
 \useinnertheme{nvhslides}
@@ -12,6 +11,10 @@
 % turn off navigation symbols
 \setbeamertemplate{navigation symbols}{}
 
+\setmainfont{IBM Plex Sans}[RawFeature={+zero}]
+\setsansfont{IBM Plex Sans}[RawFeature={+zero}]
+\setmonofont{IBM Plex Mono}[RawFeature={+zero}]
+\setmathfont{IBM Plex Math}[RawFeature={+zero}]
 \usefonttheme{professionalfonts}
 
 % set default TikZ arrow shape
