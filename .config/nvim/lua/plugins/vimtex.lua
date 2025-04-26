@@ -10,7 +10,7 @@ return {
 			vim.g.vimtex_view_method = "zathura"
 		end
 
-		-- open QuickFix for warnings only
+		-- don't open QuickFix for warnings only
 		vim.g.vimtex_quickfix_open_on_warning = false
 
 		-- fzf-lua for ToC
