@@ -166,6 +166,11 @@ return {
 			},
 			prettier = {},
 			pyright = {},
+			tinymist = {
+				settings = {
+					formatterMode = "typstyle",
+				},
+			},
 		}
 
 		-- ensure the servers and tools above are installed
