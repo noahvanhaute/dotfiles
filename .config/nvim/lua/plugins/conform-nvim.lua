@@ -33,6 +33,7 @@ return {
 			vue = { "prettier" },
 			lua = { "stylua" },
 			tex = { "latexindent" },
+			typst = { "typstyle" },
 		},
 	},
 }
