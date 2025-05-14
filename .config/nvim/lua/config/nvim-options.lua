@@ -42,7 +42,7 @@ vim.schedule(function()
 end)
 
 -- clipboard needs to be redefined when using wsl
-if vim.fn.has("wsl") then
+if vim.fn.has("wsl") == 1 then
 	vim.g.clipboard = {
 		name = "WslClipboard",
 		copy = {
