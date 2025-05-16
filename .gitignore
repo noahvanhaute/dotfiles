@@ -1,2 +1,6 @@
 # ignore log files
 *.log
+
+# ignore juliaup files and julia logs
+.julia/juliaup/
+.julia/logs
