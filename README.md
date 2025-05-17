@@ -17,3 +17,5 @@ A good chunk of my Neovim configuration came from [kickstart.nvim](https://githu
 My WezTerm color configuration is based on [wezterm-canonical-solarized](https://github.com/gfguthrie/wezterm-canonical-solarized).
 
 My KDE Plasma color scheme is a near exact copy of [kde-plasma-solarized](https://github.com/ret2src/kde-plasma-solarized).
+
+The btop theme came straight from the [theme folder](https://github.com/aristocratos/btop/tree/main/themes) in the btop repo.
