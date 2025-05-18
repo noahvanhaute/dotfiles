@@ -17,17 +17,17 @@ vim.o.expandtab = false
 -- [[ options ]]
 
 -- enable line numbering
-vim.opt.number = true
+vim.o.number = true
 -- set relative line numbering
-vim.opt.relativenumber = true
+vim.o.relativenumber = true
 
 -- enable mouse mode for resizing splits etc
-vim.opt.mouse = "a"
+vim.o.mouse = "a"
 
 -- sync clipboard between OS and Neovim
 -- schedule after 'UiEnter' because it can increase startup-time
 vim.schedule(function()
-	vim.opt.clipboard = "unnamedplus"
+	vim.o.clipboard = "unnamedplus"
 end)
 
 -- clipboard needs to be redefined when using wsl
@@ -49,37 +49,38 @@ if vim.fn.has("wsl") == 1 then
 end
 
 -- enable break indent
-vim.opt.breakindent = true
+vim.o.breakindent = true
 
 -- save undo history
-vim.opt.undofile = true
+vim.o.undofile = true
 
 -- case-insensitive searching UNLESS \C or one or more capitals in the search term
-vim.opt.ignorecase = true
-vim.opt.smartcase = true
+vim.o.ignorecase = true
+vim.o.smartcase = true
 
 -- decrease update time
-vim.opt.updatetime = 250
+vim.o.updatetime = 250
 
 -- decrease mapped sequence wait time
-vim.opt.timeoutlen = 500
+vim.o.timeoutlen = 500
 
 -- configure how new splits should be opened
-vim.opt.splitright = true
-vim.opt.splitbelow = true
+vim.o.splitright = true
+vim.o.splitbelow = true
 
 -- display certain whitespace characters in the editor
-vim.opt.list = true
+vim.o.list = true
+-- opt has an interface for interacting with tables
 vim.opt.listchars = { tab = "  ", trail = "·" }
 
 -- highlight which line the cursor is on
-vim.opt.cursorline = true
+vim.o.cursorline = true
 
 -- concealed text
-vim.opt.conceallevel = 2
+vim.o.conceallevel = 2
 
 -- minimal number of screen lines to keep above and below the cursor
-vim.opt.scrolloff = 10
+vim.o.scrolloff = 10
 
 -- [[ keymamps ]]
 
