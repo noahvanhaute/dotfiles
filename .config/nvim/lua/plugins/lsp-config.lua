@@ -4,8 +4,8 @@ return {
 		-- automatically install LSPs and related tools to stdpath for Neovim
 		-- mason must be loaded before its dependents so we need to set it up here
 		-- `opts = {}` is the same as calling `require('mason').setup({})`
-		{ "williamboman/mason.nvim", opts = {} },
-		"williamboman/mason-lspconfig.nvim",
+		{ "mason-org/mason.nvim", opts = {} },
+		"mason-org/mason-lspconfig.nvim",
 		"WhoIsSethDaniel/mason-tool-installer.nvim",
 
 		-- useful status updates for LSP.
