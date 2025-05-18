@@ -49,9 +49,6 @@ return {
 				-- rename the variable under your cursor.
 				map("<leader>rn", vim.lsp.buf.rename, "[R]e[n]ame")
 
-				-- format the curent buffer
-				-- map("<leader>af", vim.lsp.buf.format, "[A]uto [F]ormat")
-
 				-- execute a code action
 				map("<leader>ca", vim.lsp.buf.code_action, "[C]ode [A]ction", { "n", "x" })
 
@@ -98,7 +95,7 @@ return {
 		local capabilities = vim.lsp.protocol.make_client_capabilities()
 		capabilities = vim.tbl_deep_extend("force", capabilities, require("cmp_nvim_lsp").default_capabilities())
 
-		-- available keys for override configuratoin are:
+		-- available keys for override configuration are:
 		--  - cmd (table): override the default command used to start the server
 		--  - filetypes (table): override the default list of associated filetypes for the server
 		--  - capabilities (table): override fields in capabilities, can be used to disable certain LSP features
