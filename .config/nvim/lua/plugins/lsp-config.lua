@@ -161,6 +161,7 @@ return {
 			pyright = {},
 			tinymist = {
 				settings = {
+					exportPdf = "onSave",
 					formatterMode = "typstyle",
 				},
 			},
