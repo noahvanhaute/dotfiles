@@ -1,16 +1,9 @@
 local wezterm = require("wezterm")
 local config = wezterm.config_builder()
-local mux = wezterm.mux
 local colors = require("colors")
 
 -- disble wayland to prevent resizing issues
 config.enable_wayland = false
-
--- start maximized
-wezterm.on("gui-startup", function()
-	local tab, pane, window = mux.spawn_window({})
-	window:gui_window():maximize()
-end)
 
 -- disable exit confirmation message
 config.window_close_confirmation = "NeverPrompt"
