@@ -22,12 +22,5 @@ return {
 			group = au_group,
 			command = "VimtexClean",
 		})
-
-		-- focus the terminal after inverse search
-		vim.api.nvim_create_autocmd("User", {
-			pattern = "VimtexEventViewReverse",
-			group = au_group,
-			command = "call b:vimtex.viewer.xdo_focus_neovim()",
-		})
 	end,
 }
