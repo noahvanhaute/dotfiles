@@ -26,6 +26,7 @@ config.tab_bar_at_bottom = true
 -- don't show new-tab button
 config.show_new_tab_button_in_tab_bar = false
 
+-- set window paddings
 config.window_padding = {
 	left = "1cell",
 	right = "1cell",
