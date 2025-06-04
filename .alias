@@ -1,0 +1,4 @@
+alias ff="fastfetch"
+alias ls="ls --color"
+alias v="nvim"
+alias vpn="sudo /usr/sbin/openvpn --config /etc/openvpn/Windscribe-Amsterdam-Bicycle.ovpn --auth-user-pass /etc/openvpn/pass.txt"
