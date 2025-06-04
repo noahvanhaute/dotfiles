@@ -1,6 +1,9 @@
 # prompt
 PS1="%n@%m:%~"$'\n'"$ "
 
+# source alias file
+[ -f ~/.alias ] && source ~/.alias
+
 # directory for zinit and plugins
 ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
 
