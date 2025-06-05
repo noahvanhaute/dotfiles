@@ -1,5 +1,5 @@
 # prompt
-PS1="%n@%m:%~"$'\n'"$ "
+PROMPT="%F{blue}%n@%m:%~"$'\n'"%F{cyan}$ %f"
 
 # source alias file
 [ -f ~/.alias ] && source ~/.alias
