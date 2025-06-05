@@ -1,5 +1,5 @@
 # prompt
-PROMPT="%F{blue}%n@%m:%~"$'\n'"%F{cyan}$ %f"
+PROMPT='%F{blue}%n@%m:%~'$'\n''%F{cyan}$ %f'
 
 # source alias file
 [ -f ~/.alias ] && source ~/.alias
@@ -45,6 +45,9 @@ setopt globdots
 # shell integrations
 eval "$(fzf --zsh)"
 eval "$(zoxide init --cmd cd zsh)"
+
+# fix fzf colors
+export FZF_DEFAULT_OPTS='--color=bg+:black,gutter:bright-black,pointer:bright-magenta,prompt:bright-magenta'
 
 # syntax highlighting
 source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
