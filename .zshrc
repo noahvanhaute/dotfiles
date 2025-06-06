@@ -36,9 +36,6 @@ zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
 eval "$(dircolors -b)"
 zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS} ma=0\;33
 
-# autocomplete first menu match
-setopt auto_menu menu_complete
-
 # show dotfiles in menu
 setopt globdots
 
@@ -46,7 +43,7 @@ setopt globdots
 eval "$(fzf --zsh)"
 eval "$(zoxide init --cmd cd zsh)"
 
-# fix fzf colors
+# fzf colors
 export FZF_DEFAULT_OPTS='--color=bg+:black,gutter:bright-black,pointer:bright-magenta,prompt:bright-magenta'
 
 # syntax highlighting
