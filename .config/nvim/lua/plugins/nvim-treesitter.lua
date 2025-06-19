@@ -25,6 +25,7 @@ return {
 			ensure_installed = {
 				"json",
 				"javascript",
+				"latex",
 				"typescript",
 				"tsx",
 				"yaml",
