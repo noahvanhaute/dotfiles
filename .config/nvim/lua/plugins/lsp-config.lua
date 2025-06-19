@@ -170,9 +170,9 @@ return {
 		-- ensure the servers and tools above are installed
 		local ensure_installed = vim.tbl_keys(servers or {})
 		vim.list_extend(ensure_installed, {
+			"latexindent",
 			"stylua",
 			"tree-sitter-cli",
-			"latexindent",
 		})
 		require("mason-tool-installer").setup({ ensure_installed = ensure_installed })
 
