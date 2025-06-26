@@ -11,5 +11,11 @@ return {
 				end,
 			},
 		}
+
+		-- have journal notes in the root directory to make links easier
+		-- vim.g.wiki_journal = {
+		-- 	name = "",
+		-- 	root = "",
+		-- }
 	end,
 }
