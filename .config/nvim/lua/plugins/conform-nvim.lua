@@ -30,7 +30,6 @@ return {
 			}
 		end,
 		formatters_by_ft = {
-			vue = { "prettier" },
 			lua = { "stylua" },
 			tex = { "latexindent" },
 			typst = { "typstyle" },

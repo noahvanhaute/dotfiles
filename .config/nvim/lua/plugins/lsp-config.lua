@@ -157,8 +157,6 @@ return {
 					},
 				},
 			},
-			prettier = {},
-			pyright = {},
 			tinymist = {
 				settings = {
 					exportPdf = "onSave",
