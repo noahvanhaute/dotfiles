@@ -112,6 +112,7 @@ return {
 				end,
 				settings = {
 					ltex = {
+						enabled = { "bibtex", "latex" },
 						latex = {
 							commands = {
 								["\\bamadegree{}"] = "ignore",
