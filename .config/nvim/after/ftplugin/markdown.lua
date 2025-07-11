@@ -2,5 +2,5 @@
 -- https://ftp.nluug.nl/vim/runtime/spell/
 -- (Enlgish is provided by default)
 -- and placed in ~/.config/nvim/spell
-vim.opt.spell = true
-vim.opt.spelllang = { "en", "nl" }
+vim.opt_local.spell = true
+vim.opt_local.spelllang = { "en", "nl" }
