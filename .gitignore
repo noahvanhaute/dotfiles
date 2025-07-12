@@ -1,6 +1,13 @@
-# ignore log files
+# Ignore log files
 *.log
 
-# ignore juliaup files and julia logs
+# Ignore juliaup files and julia logs
 .julia/juliaup/
 .julia/logs
+
+# Ignore julia package related directories
+.julia/compiled
+.julia/environments
+.julia/packages
+.julia/registries
+.julia/scratchspaces
