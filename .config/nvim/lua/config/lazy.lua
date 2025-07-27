@@ -23,6 +23,6 @@ require("lazy").setup({
 	},
 	-- Colorscheme that will be used when installing plugins.
 	install = { colorscheme = { "solarized" } },
-	-- Automatically check for plugin updates
-	checker = { enabled = true },
+	-- Don't automatically check for plugin updates
+	checker = { enabled = false },
 })
