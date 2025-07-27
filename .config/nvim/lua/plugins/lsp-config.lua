@@ -1,64 +1,64 @@
 return {
 	"neovim/nvim-lspconfig",
 	dependencies = {
-		-- automatically install LSPs and related tools to stdpath for Neovim
-		-- mason must be loaded before its dependents so we need to set it up here
+		-- Automatically install LSPs and related tools to stdpath for Neovim
+		-- Mason must be loaded before its dependents so we need to set it up here
 		-- `opts = {}` is the same as calling `require('mason').setup({})`
 		{ "mason-org/mason.nvim", opts = {} },
 		"mason-org/mason-lspconfig.nvim",
 		"WhoIsSethDaniel/mason-tool-installer.nvim",
 
-		-- useful status updates for LSP.
+		-- Useful status updates for LSP
 		{ "j-hui/fidget.nvim", opts = {} },
 
-		-- allows extra capabilities provided by nvim-cmp
+		-- Allows extra capabilities provided by nvim-cmp
 		"hrsh7th/cmp-nvim-lsp",
 
-		-- for adding to dictionary, disabling rules and hiding false positives
+		-- For adding to dictionary, disabling rules and hiding false positives
 		"barreiroleo/ltex-extra.nvim",
 	},
 	config = function()
 		vim.api.nvim_create_autocmd("LspAttach", {
 			group = vim.api.nvim_create_augroup("kickstart-lsp-attach", { clear = true }),
 			callback = function(event)
-				-- helper function for keymaps
+				-- Helper function for keymaps
 				local map = function(keys, func, desc, mode)
 					mode = mode or "n"
 					vim.keymap.set(mode, keys, func, { buffer = event.buf, desc = "LSP: " .. desc })
 				end
 
-				-- jump to the definition of the word under your cursor.
-				-- to jump back, press <C-t>.
+				-- Jump to the definition of the word under your cursor
+				-- To jump back, press <C-t>.
 				map("grd", require("telescope.builtin").lsp_definitions, "[G]oto [D]efinition")
 
-				-- find references for the word under your cursor.
+				-- Find references for the word under your cursor.
 				map("grr", require("telescope.builtin").lsp_references, "[G]oto [R]eferences")
 
-				-- jump to the implementation of the word under your cursor.
+				-- Jump to the implementation of the word under your cursor.
 				map("gri", require("telescope.builtin").lsp_implementations, "[G]oto [I]mplementation")
 
-				-- jump to the type of the word under your cursor.
+				-- Jump to the type of the word under your cursor.
 				map("grt", require("telescope.builtin").lsp_type_definitions, "[G]oto [T]ype definition")
 
-				-- fuzzy find all the symbols in your current document.
+				-- Fuzzy find all the symbols in your current document.
 				map("gO", require("telescope.builtin").lsp_document_symbols, "[O]pen [D]ocument symbols")
 
-				-- fuzzy find all the symbols in your current workspace.
+				-- Fuzzy find all the symbols in your current workspace.
 				map("gW", require("telescope.builtin").lsp_dynamic_workspace_symbols, "[W]orkspace [S]ymbols")
 
-				-- rename the variable under your cursor.
+				-- Rename the variable under your cursor.
 				map("grn", vim.lsp.buf.rename, "[R]e[n]ame")
 
-				-- execute a code action
+				-- Execute a code action
 				map("gra", vim.lsp.buf.code_action, "[G]oto code [A]ction", { "n", "x" })
 
-				-- this is not Goto Definition, this is Goto Declaration.
-				-- for example, in C this would take you to the header.
+				-- This is not Goto Definition, this is Goto Declaration
+				-- For example, in C this would take you to the header
 				map("grD", vim.lsp.buf.declaration, "[G]oto [D]eclaration")
 
-				-- highlight references of the word under the cursor
+				-- Highlight references of the word under the cursor
 				-- `:help CursorHold`
-				-- second autocommand clears on cursor move
+				-- Second autocommand clears on cursor move
 				local client = vim.lsp.get_client_by_id(event.data.client_id)
 				if
 					client and client.supports_method(client, vim.lsp.protocol.Methods.textDocument_documentHighlight)
@@ -85,7 +85,7 @@ return {
 					})
 				end
 
-				-- toggle inlay hints if the language server supports them
+				-- Toggle inlay hints if the language server supports them
 				if client and client.supports_method(client, vim.lsp.protocol.Methods.textDocument_inlayHint) then
 					map("<leader>th", function()
 						vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled({ bufnr = event.buf }))
@@ -97,7 +97,7 @@ return {
 		local capabilities = vim.lsp.protocol.make_client_capabilities()
 		capabilities = vim.tbl_deep_extend("force", capabilities, require("cmp_nvim_lsp").default_capabilities())
 
-		-- available keys for override configuration are:
+		-- Available keys for override configuration are:
 		--  - cmd (table): override the default command used to start the server
 		--  - filetypes (table): override the default list of associated filetypes for the server
 		--  - capabilities (table): override fields in capabilities, can be used to disable certain LSP features
@@ -106,7 +106,7 @@ return {
 			ltex = {
 				filetypes = { "bib", "tex" },
 				on_attach = function(client, bufnr)
-					-- rest of your on_attach process.
+					-- Rest of your on_attach process.
 					require("ltex_extra").setup({
 						path = (vim.fn.stdpath("config")) .. "/ltex_extra",
 					})
@@ -166,7 +166,7 @@ return {
 			},
 		}
 
-		-- ensure the servers and tools above are installed
+		-- Ensure the servers and tools above are installed
 		local ensure_installed = vim.tbl_keys(servers or {})
 		vim.list_extend(ensure_installed, {
 			"latexindent",
@@ -179,9 +179,9 @@ return {
 			handlers = {
 				function(server_name)
 					local server = servers[server_name] or {}
-					-- handles overriding only values explicitly passed
-					-- by the server configuration above
-					-- useful when disabling certain features of an LSP
+					-- Handles overriding only values explicitly passed
+					--  by the server configuration above.
+					--  Useful when disabling certain features of an LSP.
 					server.capabilities = vim.tbl_deep_extend("force", {}, capabilities, server.capabilities or {})
 					require("lspconfig")[server_name].setup(server)
 				end,

@@ -1,4 +1,4 @@
--- all snippets related to text in LaTeX
+-- All snippets related to text in LaTeX
 local ls = require("luasnip")
 local s = ls.snippet
 local t = ls.text_node
@@ -8,7 +8,7 @@ local fmta = require("luasnip.extras.fmt").fmta
 local rep = require("luasnip.extras").rep
 
 ls.add_snippets("tex", {
-	-- chapter
+	-- Chapter
 	s(
 		"ch",
 		fmta(
@@ -19,7 +19,7 @@ ls.add_snippets("tex", {
 		)
 	),
 
-	-- section
+	-- Section
 	s(
 		"se",
 		fmta(
@@ -30,7 +30,7 @@ ls.add_snippets("tex", {
 		)
 	),
 
-	-- subsection
+	-- Subsection
 	s(
 		"su",
 		fmta(
@@ -41,7 +41,7 @@ ls.add_snippets("tex", {
 		)
 	),
 
-	-- paragraph
+	-- Paragraph
 	s(
 		"pa",
 		fmta(
@@ -52,7 +52,7 @@ ls.add_snippets("tex", {
 		)
 	),
 
-	-- itemize
+	-- Itemize
 	s(
 		"iz",
 		fmta(
@@ -65,7 +65,7 @@ ls.add_snippets("tex", {
 		)
 	),
 
-	-- enumerate
+	-- Enumerate
 	s(
 		"en",
 		fmta(
@@ -78,7 +78,7 @@ ls.add_snippets("tex", {
 		)
 	),
 
-	-- figure
+	-- Figure
 	s(
 		"fg",
 		fmta(
@@ -110,25 +110,25 @@ ls.add_snippets("tex", {
 		)
 	),
 
-	-- label
+	-- Label
 	s("la", fmta("\\label{<>}", { i(1) })),
 
-	-- item
+	-- Item
 	s("it", t("\\item ")),
 
-	-- citation
+	-- Citation
 	s("ci", fmta("\\cite{<>}", { i(1) })),
 
-	-- reference
+	-- Reference
 	s("rr", fmta("\\ref{<>}", { i(1) })),
 
-	-- clever reference
+	-- Clever reference
 	s("cc", fmta("\\cref{<>}", { i(1) })),
 
-	-- clever reference
+	-- Clever reference
 	s("CC", fmta("\\Cref{<>}", { i(1) })),
 
-	-- chemical equation
-	-- requires mhchem package
+	-- Chemical equation
+	-- Requires mhchem package
 	s("ce", fmta("\\ce{<>}", { i(1) })),
 })

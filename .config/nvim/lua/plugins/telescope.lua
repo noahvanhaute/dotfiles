@@ -6,7 +6,7 @@ return {
 		{
 			"nvim-telescope/telescope-fzf-native.nvim",
 
-			-- requires 'make' to be installed
+			-- Requires 'make' to be installed
 			build = "make",
 
 			cond = function()
@@ -15,12 +15,12 @@ return {
 		},
 		{ "nvim-telescope/telescope-ui-select.nvim" },
 
-		-- useful for getting pretty icons, but requires a Nerd Font.
+		-- Useful for getting pretty icons, but requires a Nerd Font
 		{ "nvim-tree/nvim-web-devicons", enabled = vim.g.have_nerd_font },
 	},
 	config = function()
-		-- insert mode: <c-/>
-		-- normal mode: ?
+		-- Insert mode: <c-/>
+		-- Normal mode: ?
 		require("telescope").setup({
 			extensions = {
 				["ui-select"] = {
@@ -29,11 +29,11 @@ return {
 			},
 		})
 
-		-- enable Telescope extensions if they are installed
+		-- Enable Telescope extensions if they are installed
 		pcall(require("telescope").load_extension, "fzf")
 		pcall(require("telescope").load_extension, "ui-select")
 
-		-- see `:help telescope.builtin`
+		-- See `:help telescope.builtin`
 		local builtin = require("telescope.builtin")
 		vim.keymap.set("n", "<leader>fh", builtin.help_tags, { desc = "[F]ind [H]elp" })
 		vim.keymap.set("n", "<leader>fk", builtin.keymaps, { desc = "[F]ind [K]eymaps" })
@@ -47,7 +47,7 @@ return {
 		vim.keymap.set("n", "<leader>fb", builtin.buffers, { desc = "[F]ind existing [B]uffers" })
 
 		vim.keymap.set("n", "<leader>/", function()
-			-- you can pass additional configuration to Telescope to change the theme, layout, etc.
+			-- You can pass additional configuration to Telescope to change the theme, layout, etc.
 			builtin.current_buffer_fuzzy_find(require("telescope.themes").get_dropdown({
 				winblend = 10,
 				previewer = false,

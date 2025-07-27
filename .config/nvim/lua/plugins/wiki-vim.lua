@@ -3,7 +3,7 @@ return {
 	init = function()
 		vim.g.wiki_root = "~/Documents/notes"
 
-		-- make newly created links lowercase and replace spaces with dashes
+		-- Make newly created links lowercase and replace spaces with dashes
 		vim.g.wiki_link_creation = {
 			md = {
 				url_transform = function(x)
@@ -12,7 +12,7 @@ return {
 			},
 		}
 
-		-- have journal notes in the root directory to make links easier
+		-- Have journal notes in the root directory to make links easier
 		-- vim.g.wiki_journal = {
 		-- 	name = "",
 		-- 	root = "",

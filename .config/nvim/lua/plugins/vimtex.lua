@@ -3,13 +3,13 @@ return {
 	lazy = false,
 
 	init = function()
-		-- set pdf viewer
+		-- Set pdf viewer
 		vim.g.vimtex_view_method = "zathura"
 
-		-- don't open QuickFix for warnings only
+		-- Don't open QuickFix for warnings only
 		vim.g.vimtex_quickfix_open_on_warning = false
 
-		-- disable conceal for spacing commands
+		-- Disable conceal for spacing commands
 		vim.g.vimtex_syntax_conceal = {
 			["accents"] = 1,
 			["ligatures"] = 1,
@@ -26,14 +26,14 @@ return {
 			["styles"] = 1,
 		}
 
-		-- fzf-lua for ToC
+		-- Use fzf-lua for ToC
 		vim.keymap.set("n", "<localleader>lt", function()
 			return require("vimtex.fzf-lua").run()
 		end)
 
 		local au_group = vim.api.nvim_create_augroup("vimtex_events", {})
 
-		-- cleanup on quit
+		-- Cleanup on quit
 		vim.api.nvim_create_autocmd("User", {
 			pattern = "VimtexEventQuit",
 			group = au_group,
