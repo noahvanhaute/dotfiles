@@ -7,11 +7,12 @@ return {
 	config = function()
 		local oil = require("oil")
 		oil.setup({
-			view_options = {
-				case_insensitive = true,
-			},
 			keymaps = {
 				["~"] = false,
+			},
+			delete_to_trash = true,
+			view_options = {
+				case_insensitive = true,
 			},
 		})
 		vim.keymap.set("n", "-", "<CMD>Oil<CR>", { desc = "Open parent directory with oil" })
