@@ -27,33 +27,15 @@ return {
 					vim.keymap.set(mode, keys, func, { buffer = event.buf, desc = "LSP: " .. desc })
 				end
 
-				-- Jump to the definition of the word under your cursor
-				-- To jump back, press <C-t>.
-				map("grd", require("telescope.builtin").lsp_definitions, "[G]oto [D]efinition")
+				local fzf = require("fzf-lua")
 
-				-- Find references for the word under your cursor.
-				map("grr", require("telescope.builtin").lsp_references, "[G]oto [R]eferences")
-
-				-- Jump to the implementation of the word under your cursor.
-				map("gri", require("telescope.builtin").lsp_implementations, "[G]oto [I]mplementation")
-
-				-- Jump to the type of the word under your cursor.
-				map("grt", require("telescope.builtin").lsp_type_definitions, "[G]oto [T]ype definition")
-
-				-- Fuzzy find all the symbols in your current document.
-				map("gO", require("telescope.builtin").lsp_document_symbols, "[O]pen [D]ocument symbols")
-
-				-- Fuzzy find all the symbols in your current workspace.
-				map("gW", require("telescope.builtin").lsp_dynamic_workspace_symbols, "[W]orkspace [S]ymbols")
-
-				-- Rename the variable under your cursor.
+				map("grd", fzf.lsp_definitions, "[G]oto [D]efinition")
+				map("grr", fzf.lsp_references, "[G]oto [R]eferences")
+				map("gri", fzf.lsp_implementations, "[G]oto [I]mplementation")
+				map("grt", fzf.lsp_typedefs, "[G]oto [T]ype definition")
 				map("grn", vim.lsp.buf.rename, "[R]e[n]ame")
-
-				-- Execute a code action
 				map("gra", vim.lsp.buf.code_action, "[G]oto code [A]ction", { "n", "x" })
-
-				-- This is not Goto Definition, this is Goto Declaration
-				-- For example, in C this would take you to the header
+				-- Different from definition, in C this would take you to the header
 				map("grD", vim.lsp.buf.declaration, "[G]oto [D]eclaration")
 
 				-- Highlight references of the word under the cursor
@@ -63,7 +45,7 @@ return {
 				if
 					client and client.supports_method(client, vim.lsp.protocol.Methods.textDocument_documentHighlight)
 				then
-					local highlight_augroup = vim.api.nvim_create_augroup("kickstart-lsp-highlight", { clear = false })
+					local highlight_augroup = vim.api.nvim_create_augroup("lsp-highlight", { clear = false })
 					vim.api.nvim_create_autocmd({ "CursorHold", "CursorHoldI" }, {
 						buffer = event.buf,
 						group = highlight_augroup,
@@ -77,10 +59,10 @@ return {
 					})
 
 					vim.api.nvim_create_autocmd("LspDetach", {
-						group = vim.api.nvim_create_augroup("kickstart-lsp-detach", { clear = true }),
+						group = vim.api.nvim_create_augroup("lsp-detach", { clear = true }),
 						callback = function(event2)
 							vim.lsp.buf.clear_references()
-							vim.api.nvim_clear_autocmds({ group = "kickstart-lsp-highlight", buffer = event2.buf })
+							vim.api.nvim_clear_autocmds({ group = "lsp-highlight", buffer = event2.buf })
 						end,
 					})
 				end
@@ -106,7 +88,6 @@ return {
 			ltex = {
 				filetypes = { "bib", "tex" },
 				on_attach = function(client, bufnr)
-					-- Rest of your on_attach process.
 					require("ltex_extra").setup({
 						path = (vim.fn.stdpath("config")) .. "/ltex_extra",
 					})
