@@ -8,6 +8,5 @@ return {
 	-- WARNING: don't fuck this up
 	"folke/todo-comments.nvim",
 	event = "VimEnter",
-	dependencies = { "nvim-lua/plenary.nvim" },
 	opts = { signs = false },
 }
