@@ -51,6 +51,9 @@ end
 -- Enable break indent
 vim.o.breakindent = true
 
+-- Only insert soft breaks by word instead of by character
+vim.o.linebreak = true
+
 -- Save undo history
 vim.o.undofile = true
 
