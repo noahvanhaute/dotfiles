@@ -1,6 +1,8 @@
 local wezterm = require("wezterm")
 local config = wezterm.config_builder()
 
+-- [[ Behaviour ]]
+
 -- Disble wayland to prevent resizing issues
 config.enable_wayland = false
 
@@ -8,8 +10,7 @@ config.enable_wayland = false
 config.window_close_confirmation = "NeverPrompt"
 
 -- [[ Colors ]]
--- based on
---  https://github.com/gfguthrie/wezterm-canonical-solarized
+-- based on https://github.com/gfguthrie/wezterm-canonical-solarized
 
 -- https://ethanschoonover.com/solarized/#the-values
 local base03 = "lab(15% -12 -12)" --  #002b36  8/4 brblack  234 #1c1c1c 15 -12 -12   0  43  54 193 100  21
@@ -115,6 +116,7 @@ config.window_frame = {
 -- Solarized is incompatible with this option
 config.bold_brightens_ansi_colors = "No"
 
+-- [[ Appearance ]]
 -- Font
 config.font = wezterm.font("Fira Code Nerd Font")
 
