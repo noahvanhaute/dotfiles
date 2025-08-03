@@ -21,6 +21,9 @@ vim.o.number = true
 -- Set relative line numbering
 vim.o.relativenumber = true
 
+-- Border around floating windows
+vim.o.winborder = "rounded"
+
 -- Enable mouse mode for resizing splits etc
 vim.o.mouse = "a"
 
