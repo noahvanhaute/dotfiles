@@ -14,6 +14,8 @@ These will not be stowed when running `stow .`, instead use `sudo stow etc -t /e
 ## Acknowledgements
 A good chunk of my Neovim configuration came from [kickstart.nvim](https://github.com/nvim-lua/kickstart.nvim).
 
+The contents of `.luarc.json` for the Neovim config folder were inspired by [this video](https://www.youtube.com/watch?v=UE6XQTAxwE0) from Marco Peluso.
+
 My WezTerm color configuration is based on [wezterm-canonical-solarized](https://github.com/gfguthrie/wezterm-canonical-solarized).
 
 My KDE Plasma color scheme is a near exact copy of [kde-plasma-solarized](https://github.com/ret2src/kde-plasma-solarized).
