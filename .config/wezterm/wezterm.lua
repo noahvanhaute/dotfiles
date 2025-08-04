@@ -126,6 +126,9 @@ config.use_fancy_tab_bar = false
 -- Tab bar at bottom
 config.tab_bar_at_bottom = true
 
+-- Hide tab bar if there's only one tab
+config.hide_tab_bar_if_only_one_tab = true
+
 -- Don't show new-tab button
 config.show_new_tab_button_in_tab_bar = false
 
