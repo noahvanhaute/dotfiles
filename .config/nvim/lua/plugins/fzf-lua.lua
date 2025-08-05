@@ -4,7 +4,10 @@ return {
 	config = function()
 		local fzf = require("fzf-lua")
 		fzf.setup({
-			fzf_colors = true,
+			fzf_colors = {
+				true,
+				["gutter"] = "-1",
+			},
 			blines = {
 				previewer = false,
 			},
