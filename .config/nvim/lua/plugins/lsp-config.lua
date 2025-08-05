@@ -139,7 +139,6 @@ return {
 			tinymist = {
 				settings = {
 					exportPdf = "onSave",
-					formatterMode = "typstyle",
 				},
 			},
 		}
@@ -150,6 +149,7 @@ return {
 			"latexindent",
 			"stylua",
 			"tree-sitter-cli",
+			"typstyle",
 		})
 		require("mason-tool-installer").setup({ ensure_installed = ensure_installed })
 
