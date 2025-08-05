@@ -10,7 +10,6 @@ return {
 		require("solarized").setup({
 			transparent = {
 				enabled = true,
-				normalfloat = true,
 			},
 		})
 		vim.cmd.colorscheme("solarized")
