@@ -2,7 +2,6 @@ return {
 	"hrsh7th/nvim-cmp",
 	event = "InsertEnter",
 	dependencies = {
-		-- Snippet engine & its associated nvim-cmp source
 		{
 			"L3MON4D3/LuaSnip",
 			build = (function()
@@ -11,23 +10,18 @@ return {
 			end)(),
 		},
 		"saadparwaiz1/cmp_luasnip",
-
-		-- Other completion capabilities.
 		"hrsh7th/cmp-nvim-lsp",
 		"hrsh7th/cmp-path",
 	},
 	config = function()
-		-- `:help cmp`
 		local cmp = require("cmp")
 		local luasnip = require("luasnip")
 		require("luasnip.loaders.from_lua").lazy_load()
 		luasnip.config.setup({
 			enable_autosnippets = true,
-			-- [S]tore [S]election
 			cut_selection_keys = "<leader>ss",
 		})
 
-		-- Keymap to reload snippets
 		vim.keymap.set(
 			"n",
 			"<leader><leader>s",
@@ -43,23 +37,15 @@ return {
 			},
 			completion = { completeopt = "menu,menuone,noinsert" },
 
-			-- `:help ins-completion`
 			mapping = cmp.mapping.preset.insert({
-				-- Select the [n]ext item
 				["<C-n>"] = cmp.mapping.select_next_item(),
-				-- Select the [p]revious item
 				["<C-p>"] = cmp.mapping.select_prev_item(),
 
-				-- Scroll the documentation window [b]ack / [f]orward
 				["<C-b>"] = cmp.mapping.scroll_docs(-4),
 				["<C-f>"] = cmp.mapping.scroll_docs(4),
 
-				-- Accept ([y]es) the completion
-				-- Will auto-import if your LSP supports it
-				-- Will expand snippets if the LSP sent a snippet
 				["<C-y>"] = cmp.mapping.confirm({ select = true }),
 
-				-- Manually trigger a completion from nvim-cmp.
 				["<C-Space>"] = cmp.mapping.complete({}),
 
 				-- Move to the right of expansion

@@ -3,13 +3,10 @@ return {
 	lazy = false,
 
 	init = function()
-		-- Set pdf viewer
 		vim.g.vimtex_view_method = "zathura"
 
-		-- Don't open QuickFix for warnings only
 		vim.g.vimtex_quickfix_open_on_warning = false
 
-		-- Disable conceal for spacing commands
 		vim.g.vimtex_syntax_conceal = {
 			["accents"] = 1,
 			["ligatures"] = 1,

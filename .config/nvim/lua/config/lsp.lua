@@ -75,7 +75,6 @@ vim.lsp.enable({ "tinymist" })
 vim.api.nvim_create_autocmd("LspAttach", {
 	group = vim.api.nvim_create_augroup("lsp-attach", { clear = true }),
 	callback = function(event)
-		-- Helper function for keymaps
 		local map = function(keys, func, desc, mode)
 			mode = mode or "n"
 			vim.keymap.set(mode, keys, func, { buffer = event.buf, desc = "LSP: " .. desc })
@@ -83,6 +82,7 @@ vim.api.nvim_create_autocmd("LspAttach", {
 
 		local fzf = require("fzf-lua")
 
+		-- All keymaps are the same as, or in the spirit of, the defaults
 		map("grd", fzf.lsp_definitions, "[G]oto [D]efinition")
 		map("grr", fzf.lsp_references, "[G]oto [R]eferences")
 		map("gri", fzf.lsp_implementations, "[G]oto [I]mplementation")
@@ -93,8 +93,6 @@ vim.api.nvim_create_autocmd("LspAttach", {
 		map("grD", vim.lsp.buf.declaration, "[G]oto [D]eclaration")
 
 		-- Highlight references of the word under the cursor
-		-- `:help CursorHold`
-		-- Second autocommand clears on cursor move
 		local client = vim.lsp.get_client_by_id(event.data.client_id)
 		if client and client.supports_method(client, vim.lsp.protocol.Methods.textDocument_documentHighlight) then
 			local highlight_augroup = vim.api.nvim_create_augroup("lsp-highlight", { clear = false })
@@ -119,7 +117,6 @@ vim.api.nvim_create_autocmd("LspAttach", {
 			})
 		end
 
-		-- Toggle inlay hints if the language server supports them
 		if client and client.supports_method(client, vim.lsp.protocol.Methods.textDocument_inlayHint) then
 			map("<leader>th", function()
 				vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled({ bufnr = event.buf }))

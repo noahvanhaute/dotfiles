@@ -1,30 +1,21 @@
--- Set <space> as the leader key
+-- [[ Globals ]]
+
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
--- Enable nerd font
 vim.g.have_nerd_font = true
 
--- A TAB character counts for 4 spaces
+-- [[ Options ]]
 vim.o.tabstop = 4
--- A TAB character counts for 4 spaces while editing
 vim.o.softtabstop = 4
--- Number of spaces inserted when indenting
 vim.o.shiftwidth = 4
--- Pressing the TAB key will insert a real TAB character
 vim.o.expandtab = false
 
--- [[ Options ]]
-
--- Enable line numbering
 vim.o.number = true
--- Set relative line numbering
 vim.o.relativenumber = true
 
--- Border around floating windows
 vim.o.winborder = "rounded"
 
--- Enable mouse mode for resizing splits etc
 vim.o.mouse = "a"
 
 -- Sync clipboard between OS and Neovim
@@ -51,57 +42,40 @@ if vim.fn.has("wsl") == 1 then
 	vim.keymap.set({ "n", "v" }, "p", '"+p', { noremap = true, silent = true })
 end
 
--- Enable break indent
 vim.o.breakindent = true
 
--- Only insert soft breaks by word instead of by character
 vim.o.linebreak = true
 
--- Save undo history
 vim.o.undofile = true
 
--- Case-insensitive searching UNLESS \C or one or more capitals in the search term
 vim.o.ignorecase = true
 vim.o.smartcase = true
 
--- Decrease update time
 vim.o.updatetime = 250
 
--- Decrease mapped sequence wait time
 vim.o.timeoutlen = 500
 
--- Configure how new splits should be opened
 vim.o.splitright = true
 vim.o.splitbelow = true
 
--- Display certain whitespace characters in the editor
 vim.o.list = true
--- Opt has an interface for interacting with tables
+-- Use `opt` here as it has an interface for interacting with tables
 vim.opt.listchars = { tab = "  ", trail = "·" }
 
--- Highlight which line the cursor is on
 vim.o.cursorline = true
 
--- Concealed text
 vim.o.conceallevel = 2
 
--- Minimal number of screen lines to keep above and below the cursor
 vim.o.scrolloff = 10
 
 -- [[ Keymamps ]]
 
--- Clear highlights on search when pressing <Esc> in normal mode
-vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>")
-
--- Diagnostic keymaps
+vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>", { desc = "Clear search highlights with <Esc>" })
 vim.keymap.set("n", "<leader>q", vim.diagnostic.setloclist, { desc = "Open diagnostic [Q]uickfix list" })
-
--- Alternative to exit terminal mode in builtin
 vim.keymap.set("t", "<Esc><Esc>", "<C-\\><C-n>", { desc = "Exit terminal mode" })
 
 -- [[ Autocommands ]]
 
--- Highlight text being yanked
 vim.api.nvim_create_autocmd("TextYankPost", {
 	desc = "Highlight when yanking (copying) text",
 	group = vim.api.nvim_create_augroup("highlight-yank", { clear = true }),
@@ -110,9 +84,8 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 	end,
 })
 
--- Return to last edit position when opening files
 vim.api.nvim_create_autocmd("BufReadPost", {
-	desc = "return to last edit position when opening files",
+	desc = "Return to last edit position when opening files",
 	group = vim.api.nvim_create_augroup("return-position", { clear = true }),
 	callback = function()
 		local mark = vim.api.nvim_buf_get_mark(0, '"')

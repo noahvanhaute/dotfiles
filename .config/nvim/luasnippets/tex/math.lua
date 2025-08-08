@@ -1,4 +1,3 @@
--- All snippets related to math in LaTeX
 local ls = require("luasnip")
 local s = ls.snippet
 local t = ls.text_node
@@ -13,7 +12,7 @@ local in_mathzone = function()
 	return vim.fn["vimtex#syntax#in_mathzone"]() == 1
 end
 
--- Defining greek letter tiggers
+-- Greek letter tiggers
 local trig1 = "g"
 local trig2 = {
 	{ "a", "\\alpha" },
@@ -56,7 +55,7 @@ local trig2 = {
 	{ "O", "\\Omega" },
 }
 
--- Adding greek letter snippets
+-- Greek letter snippets
 for index, v in ipairs(trig2) do
 	local trigger = trig1 .. v[1]
 	local letter = v[2]
