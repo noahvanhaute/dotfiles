@@ -11,18 +11,12 @@ return {
 			indent = { enable = true },
 			ensure_installed = {
 				"bash",
-				"css",
 				"gitignore",
-				"html",
 				"json",
-				"javascript",
 				"latex",
-				"lua",
-				"markdown",
 				"markdown_inline",
 				"ron",
 				"vim",
-				"vimdoc",
 				"yaml",
 			},
 		})
