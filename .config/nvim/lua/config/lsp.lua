@@ -30,7 +30,7 @@ vim.lsp.config("ltex_plus", {
 			},
 		},
 	},
-	on_attach = function(client, bufnr)
+	on_attach = function()
 		require("ltex_extra").setup({
 			path = (vim.fn.stdpath("config")) .. "/ltex_extra",
 		})
