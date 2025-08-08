@@ -76,11 +76,6 @@ return {
 				end, { "i", "s" }),
 			}),
 			sources = {
-				{
-					name = "lazydev",
-					-- Set group index to 0 to skip loading LuaLS completions as lazydev recommends it
-					group_index = 0,
-				},
 				{ name = "nvim_lsp" },
 				{ name = "luasnip" },
 				{ name = "path" },
