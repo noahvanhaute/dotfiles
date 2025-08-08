@@ -6,7 +6,6 @@ local config = wezterm.config_builder()
 -- Disble wayland to prevent resizing issues
 config.enable_wayland = false
 
--- Disable exit confirmation message
 config.window_close_confirmation = "NeverPrompt"
 
 -- [[ Colors ]]
@@ -74,32 +73,24 @@ config.colors = {
 	quick_select_match_fg = { Color = base01 },
 	quick_select_match_bg = { Color = base02 },
 
-	-- Tab bar colors
 	tab_bar = {
-		-- Tab bar background
 		background = base02,
-
 		active_tab = {
 			bg_color = base03,
 			fg_color = base1,
 		},
-
 		inactive_tab = {
 			bg_color = base02,
 			fg_color = base01,
 		},
-
 		inactive_tab_hover = {
 			bg_color = base02,
 			fg_color = base1,
 		},
-
-		-- New tab button
 		new_tab = {
 			bg_color = base02,
 			fg_color = base01,
 		},
-
 		new_tab_hover = {
 			bg_color = base02,
 			fg_color = base1,
@@ -107,32 +98,21 @@ config.colors = {
 	},
 }
 
--- Tab bar background color
-config.window_frame = {
-	active_titlebar_bg = base02,
-	inactive_titlebar_bg = base02,
-}
-
 -- Solarized is incompatible with this option
 config.bold_brightens_ansi_colors = "No"
 
 -- [[ Appearance ]]
--- Font
+
 config.font = wezterm.font("Fira Code Nerd Font")
 
--- Disable fancy tab bar
 config.use_fancy_tab_bar = false
 
--- Tab bar at bottom
 config.tab_bar_at_bottom = true
 
--- Hide tab bar if there's only one tab
 config.hide_tab_bar_if_only_one_tab = true
 
--- Don't show new-tab button
 config.show_new_tab_button_in_tab_bar = false
 
--- Set window padding
 config.window_padding = {
 	left = "1cell",
 	right = "1cell",
