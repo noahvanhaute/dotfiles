@@ -25,4 +25,5 @@ require("lazy").setup({
 	install = { colorscheme = { "solarized" } },
 	-- Don't automatically check for plugin updates
 	checker = { enabled = false },
+	ui = { border = "rounded" },
 })
