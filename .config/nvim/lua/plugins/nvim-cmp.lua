@@ -12,6 +12,8 @@ return {
 		"saadparwaiz1/cmp_luasnip",
 		"hrsh7th/cmp-nvim-lsp",
 		"hrsh7th/cmp-path",
+		"micangl/cmp-vimtex",
+		"hrsh7th/cmp-nvim-lsp",
 	},
 	config = function()
 		local cmp = require("cmp")
