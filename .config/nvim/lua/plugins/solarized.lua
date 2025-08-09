@@ -4,14 +4,14 @@ return {
 	priority = 1000,
 	---@type solarized.config
 	opts = {},
-	config = function(_, opts)
-		vim.o.termguicolors = true
-		vim.o.background = "dark"
+	config = function()
 		require("solarized").setup({
 			transparent = {
 				enabled = true,
 			},
 		})
 		vim.cmd.colorscheme("solarized")
+		vim.o.background = "dark"
+		vim.o.termguicolors = true
 	end,
 }
