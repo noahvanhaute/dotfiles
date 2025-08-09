@@ -12,10 +12,6 @@ return {
 			runtime = { version = "LuaJIT" },
 			workspace = {
 				checkThirdParty = true,
-				library = {
-					vim.env.VIMRUNTIME,
-					"~/.local/share/nvim/lazy/solarized.nvim",
-				},
 			},
 		},
 	},
