@@ -3,10 +3,7 @@ return {
 	lazy = false,
 
 	init = function()
-		vim.g.vimtex_view_method = "zathura"
-
 		vim.g.vimtex_quickfix_open_on_warning = false
-
 		vim.g.vimtex_syntax_conceal = {
 			["accents"] = 1,
 			["ligatures"] = 1,
@@ -22,18 +19,17 @@ return {
 			["sections"] = 0,
 			["styles"] = 1,
 		}
+		vim.g.vimtex_view_method = "zathura"
 
 		-- Use fzf-lua for ToC
 		vim.keymap.set("n", "<localleader>lt", function()
 			return require("vimtex.fzf-lua").run()
 		end)
 
-		local au_group = vim.api.nvim_create_augroup("vimtex_events", {})
-
 		-- Cleanup on quit
 		vim.api.nvim_create_autocmd("User", {
 			pattern = "VimtexEventQuit",
-			group = au_group,
+			group = vim.api.nvim_create_augroup("vimtex_events", {}),
 			command = "VimtexClean",
 		})
 	end,
