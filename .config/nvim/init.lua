@@ -17,24 +17,11 @@ vim.opt.rtp:prepend(lazypath)
 
 -- [[ Globals ]]
 
+vim.g.have_nerd_font = true
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
-vim.g.have_nerd_font = true
-
 -- [[ Options ]]
-
-vim.o.tabstop = 4
-vim.o.softtabstop = 4
-vim.o.shiftwidth = 4
-vim.o.expandtab = false
-
-vim.o.number = true
-vim.o.relativenumber = true
-
-vim.o.winborder = "rounded"
-
-vim.o.mouse = "a"
 
 -- Sync clipboard between OS and Neovim
 -- Schedule after 'UiEnter' because it can increase startup-time
@@ -43,44 +30,35 @@ vim.schedule(function()
 end)
 
 vim.o.breakindent = true
-
 vim.o.linebreak = true
-
-vim.o.undofile = true
-
+vim.o.cursorline = true
+vim.o.expandtab = false
+vim.o.shiftwidth = 4
+vim.o.softtabstop = 4
+vim.o.tabstop = 4
 vim.o.ignorecase = true
 vim.o.smartcase = true
-
-vim.o.updatetime = 250
-
-vim.o.timeoutlen = 500
-
-vim.o.splitright = true
-vim.o.splitbelow = true
-
 vim.o.list = true
 -- Use `opt` here as it has an interface for interacting with tables
 vim.opt.listchars = { tab = "  ", trail = "·" }
-
-vim.o.cursorline = true
-
+vim.o.number = true
+vim.o.relativenumber = true
+vim.o.mouse = "a"
 vim.o.scrolloff = 10
+vim.o.splitright = true
+vim.o.splitbelow = true
+vim.o.timeoutlen = 500
+vim.o.undofile = true
+vim.o.updatetime = 250
+vim.o.winborder = "rounded"
 
 -- [[ Keymamps ]]
 
 vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>", { desc = "Clear search highlights with <Esc>" })
-vim.keymap.set("n", "<leader>q", vim.diagnostic.setloclist, { desc = "Open diagnostic [Q]uickfix list" })
 vim.keymap.set("t", "<Esc><Esc>", "<C-\\><C-n>", { desc = "Exit terminal mode" })
+vim.keymap.set("n", "<leader>q", vim.diagnostic.setloclist, { desc = "Open diagnostic [Q]uickfix list" })
 
 -- [[ Autocommands ]]
-
-vim.api.nvim_create_autocmd("TextYankPost", {
-	desc = "Highlight when yanking (copying) text",
-	group = vim.api.nvim_create_augroup("highlight-yank", { clear = true }),
-	callback = function()
-		vim.hl.on_yank()
-	end,
-})
 
 vim.api.nvim_create_autocmd("BufReadPost", {
 	desc = "Return to last edit position when opening files",
@@ -91,6 +69,15 @@ vim.api.nvim_create_autocmd("BufReadPost", {
 		if mark[1] > 0 and mark[1] <= lcount then
 			pcall(vim.api.nvim_win_set_cursor, 0, mark)
 		end
+	end,
+})
+
+vim.api.nvim_create_autocmd("FileType", {
+	desc = "LaTeX specific settings",
+	group = vim.api.nvim_create_augroup("latex-settings", { clear = true }),
+	pattern = { "tex" },
+	callback = function()
+		vim.o.conceallevel = 2
 	end,
 })
 
@@ -114,12 +101,11 @@ vim.api.nvim_create_autocmd("FileType", {
 	end,
 })
 
-vim.api.nvim_create_autocmd("FileType", {
-	desc = "LaTeX specific settings",
-	group = vim.api.nvim_create_augroup("latex-settings", { clear = true }),
-	pattern = { "tex" },
+vim.api.nvim_create_autocmd("TextYankPost", {
+	desc = "Highlight when yanking (copying) text",
+	group = vim.api.nvim_create_augroup("highlight-yank", { clear = true }),
 	callback = function()
-		vim.o.conceallevel = 2
+		vim.hl.on_yank()
 	end,
 })
 
@@ -156,6 +142,8 @@ require("lazy").setup({
 
 vim.lsp.enable({ "ltex_plus", "lua_ls", "tinymist" })
 
+vim.diagnostic.config({ virtual_lines = { current_line = true } })
+
 vim.api.nvim_create_autocmd("LspAttach", {
 	group = vim.api.nvim_create_augroup("lsp-attach", { clear = true }),
 	callback = function(event)
@@ -167,14 +155,14 @@ vim.api.nvim_create_autocmd("LspAttach", {
 		local fzf = require("fzf-lua")
 
 		-- All keymaps are the same as, or in the spirit of, the defaults
-		map("grd", fzf.lsp_definitions, "[G]oto [D]efinition")
-		map("grr", fzf.lsp_references, "[G]oto [R]eferences")
-		map("gri", fzf.lsp_implementations, "[G]oto [I]mplementation")
-		map("grt", fzf.lsp_typedefs, "[G]oto [T]ype definition")
-		map("grn", vim.lsp.buf.rename, "[R]e[n]ame")
 		map("gra", vim.lsp.buf.code_action, "[G]oto code [A]ction", { "n", "x" })
 		-- Different from definition, in C this would take you to the header
 		map("grD", vim.lsp.buf.declaration, "[G]oto [D]eclaration")
+		map("grd", fzf.lsp_definitions, "[G]oto [D]efinition")
+		map("gri", fzf.lsp_implementations, "[G]oto [I]mplementation")
+		map("grn", vim.lsp.buf.rename, "[R]e[n]ame")
+		map("grr", fzf.lsp_references, "[G]oto [R]eferences")
+		map("grt", fzf.lsp_typedefs, "[G]oto [T]ype definition")
 
 		-- Highlight references of the word under the cursor
 		local client = vim.lsp.get_client_by_id(event.data.client_id)
@@ -208,5 +196,3 @@ vim.api.nvim_create_autocmd("LspAttach", {
 		end
 	end,
 })
-
-vim.diagnostic.config({ virtual_lines = { current_line = true } })
