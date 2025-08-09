@@ -1,6 +1,11 @@
 return {
 	cmd = { "ltex-ls-plus" },
 	filetypes = { "bib", "tex" },
+	on_attach = function()
+		require("ltex_extra").setup({
+			path = (vim.fn.stdpath("config")) .. "/ltex_extra",
+		})
+	end,
 	root_markers = { { ".git" } },
 	settings = {
 		ltex = {
@@ -30,9 +35,4 @@ return {
 			},
 		},
 	},
-	on_attach = function()
-		require("ltex_extra").setup({
-			path = (vim.fn.stdpath("config")) .. "/ltex_extra",
-		})
-	end,
 }
