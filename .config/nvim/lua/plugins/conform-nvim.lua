@@ -1,19 +1,23 @@
 return {
 	"stevearc/conform.nvim",
-	event = { "BufWritePre" },
 	cmd = { "ConformInfo" },
+	event = { "BufWritePre" },
 	keys = {
 		{
+			desc = "[A]uto [F]ormat buffer",
 			"<leader>af",
 			function()
 				require("conform").format({ async = true, lsp_format = "fallback" })
 			end,
 			mode = "",
-			desc = "[A]uto [F]ormat buffer",
 		},
 	},
 	opts = {
-		notify_on_error = false,
+		formatters_by_ft = {
+			lua = { "stylua" },
+			tex = { "latexindent" },
+			typst = { "typstyle" },
+		},
 		format_on_save = function(bufnr)
 			-- Disable "format_on_save lsp_fallback" for languages that don't
 			--  have a well standardized coding style
@@ -25,14 +29,10 @@ return {
 				lsp_format_opt = "fallback"
 			end
 			return {
-				timeout_ms = 10000,
 				lsp_format = lsp_format_opt,
+				timeout_ms = 10000,
 			}
 		end,
-		formatters_by_ft = {
-			lua = { "stylua" },
-			tex = { "latexindent" },
-			typst = { "typstyle" },
-		},
+		notify_on_error = false,
 	},
 }
