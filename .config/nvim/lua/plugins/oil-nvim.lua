@@ -5,12 +5,11 @@ return {
 	opts = {},
 	dependencies = { "nvim-tree/nvim-web-devicons" },
 	config = function()
-		local oil = require("oil")
-		oil.setup({
+		require("oil").setup({
+			delete_to_trash = true,
 			keymaps = {
 				["~"] = false,
 			},
-			delete_to_trash = true,
 			view_options = {
 				case_insensitive = true,
 			},
