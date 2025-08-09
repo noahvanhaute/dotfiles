@@ -99,7 +99,10 @@ vim.api.nvim_create_autocmd("FileType", {
 	group = vim.api.nvim_create_augroup("markdown-settings", { clear = true }),
 	pattern = { "markdown" },
 	callback = function()
-		vim.opt_local.spell = true
+		-- Turn off spell for floating windows so that `vim.lsp.buf.hover()
+		--  isn't spellchecked
+		vim.opt_local.spell = not vim.api.nvim_win_get_config(0).zindex
+
 		-- The utf-8.spl and .utf-8.sug files for your languages should be downloaded from
 		--  https://ftp.nluug.nl/vim/runtime/spell/
 		--  (Enlgish is provided by default)
