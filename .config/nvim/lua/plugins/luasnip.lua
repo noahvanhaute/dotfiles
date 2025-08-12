@@ -7,10 +7,7 @@ return {
 	config = function()
 		local luasnip = require("luasnip")
 		require("luasnip.loaders.from_lua").lazy_load()
-		luasnip.config.setup({
-			enable_autosnippets = true,
-			cut_selection_keys = "<leader>ss",
-		})
+		luasnip.config.setup({ enable_autosnippets = true })
 
 		vim.keymap.set(
 			"n",
