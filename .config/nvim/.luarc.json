@@ -8,8 +8,8 @@
   "workspace.checkThirdParty": true,
   "workspace.library": [
     "$VIMRUNTIME",
-	"~/.local/share/nvim/lazy/oil.nvim",
+	"~/.local/share/nvim/lazy/oil.nvim/",
 	"~/.local/share/nvim/lazy/render-markdown.nvim/",
-	"~/.local/share/nvim/lazy/solarized.nvim"
+	"~/.local/share/nvim/lazy/solarized.nvim/"
   ]
 }

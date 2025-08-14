@@ -1,11 +1,3 @@
-local ls = require("luasnip")
-local s = ls.snippet
-local t = ls.text_node
-local i = ls.insert_node
-local f = ls.function_node
-local fmta = require("luasnip.extras.fmt").fmta
-local rep = require("luasnip.extras").rep
-
 -- Function to pass as a condintion for only tiggering in math mode
 local in_mathzone = function()
 	-- Requires the VimTeX plugin
@@ -54,18 +46,19 @@ local trig2 = {
 	{ "o", "\\omega" },
 	{ "O", "\\Omega" },
 }
+return {
+	(function()
+		local greek = {}
+		for _, v in ipairs(trig2) do
+			greek[#greek + 1] = s(
+				{ trig = trig1 .. v[1], snippetType = "autosnippet" },
+				t(v[2]),
+				{ condition = in_mathzone }
+			)
+		end
+		return unpack(greek)
+	end)(),
 
--- Greek letter snippets
-for index, v in ipairs(trig2) do
-	local trigger = trig1 .. v[1]
-	local letter = v[2]
-	ls.add_snippets("tex", {
-		s({ trig = trigger, snippetType = "autosnippet" }, t(letter), { condition = in_mathzone }),
-	})
-end
-
--- Rest of the snippets
-ls.add_snippets("tex", {
 	-- Inline math
 	s("im", fmta("\\(<>\\)", { i(1) })),
 
@@ -355,4 +348,4 @@ ls.add_snippets("tex", {
 
 	-- Cotangent
 	s({ trig = "cot", snippetType = "autosnippet" }, t("\\cot"), { condition = in_mathzone }),
-})
+}

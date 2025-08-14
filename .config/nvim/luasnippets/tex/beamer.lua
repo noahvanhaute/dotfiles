@@ -1,9 +1,4 @@
-local ls = require("luasnip")
-local s = ls.snippet
-local i = ls.insert_node
-local fmta = require("luasnip.extras.fmt").fmta
-
-ls.add_snippets("tex", {
+return {
 	-- Frame environment
 	s(
 		"fr",
@@ -16,4 +11,4 @@ ls.add_snippets("tex", {
 			{ i(1), i(2), i(3) }
 		)
 	),
-})
+}
