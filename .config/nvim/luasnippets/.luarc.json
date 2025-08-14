@@ -4,6 +4,6 @@
   "workspace.checkThirdParty": true,
   "workspace.library": [
     "$VIMRUNTIME",
-	"~/.config/nvim/state/luasnip-snip_env/",
+	"~/.local/share/nvim/state/luasnip-snip_env/",
   ]
 }
