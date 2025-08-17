@@ -1,15 +1,11 @@
-# Prompt
 PROMPT='%F{blue}%n@%m:%~'$'\n''%F{cyan}$ %f'
 
-# Source alias file
 [ -f ~/.alias ] && source ~/.alias
 
-# Modules
 zmodload zsh/complist
 autoload -U compinit && compinit
 autoload -U colors && colors
 
-# Keybinds
 bindkey '^p' history-search-backward
 bindkey '^n' history-search-forward
 
@@ -36,16 +32,12 @@ zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
 eval "$(dircolors -b)"
 zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS} ma=0\;33
 
-# Show dotfiles in menu
+# Show dotfiles in completion menu
 setopt globdots
 
-# Shell integrations
 eval "$(fzf --zsh)"
 eval "$(zoxide init --cmd cd zsh)"
 
-
-# Fzf colors
 export FZF_DEFAULT_OPTS='--color=bg+:black,gutter:bright-black,pointer:bright-magenta,prompt:bright-magenta'
 
-# Syntax highlighting
 source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
