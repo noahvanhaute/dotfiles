@@ -1,6 +1,9 @@
 # Ignore log files
 *.log
 
+# Ignore mpd database
+database
+
 # Ignore juliaup files and julia logs
 .julia/juliaup/
 .julia/logs

@@ -1,0 +1,19 @@
+#!/usr/bin/env sh
+
+# Directory where to store temporary data
+TMP_DIR="/tmp/rmpc"
+
+# Ensure the directory is created
+mkdir -p "$TMP_DIR"
+
+# Where to temporarily store the album art received from rmpc
+ALBUM_ART_PATH="$TMP_DIR/notification_cover"
+
+# Save album art of the currently playing song to a file
+if ! rmpc albumart --output "$ALBUM_ART_PATH"; then
+    # Use no album art if none is provided
+    ALBUM_ART_PATH=""
+fi
+
+# Send the notification
+notify-send -a "Music Player Daemon" -i "${ALBUM_ART_PATH}" "$ARTIST - $TITLE" "$ALBUM, track $TRACK"
