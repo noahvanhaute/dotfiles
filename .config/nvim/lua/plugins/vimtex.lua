@@ -19,7 +19,7 @@ return {
 			["sections"] = 0,
 			["styles"] = 1,
 		}
-		vim.g.vimtex_view_method = "zathura"
+		vim.g.vimtex_view_method = "zathura_simple"
 
 		-- Use fzf-lua for ToC
 		vim.keymap.set("n", "<localleader>lt", function()
