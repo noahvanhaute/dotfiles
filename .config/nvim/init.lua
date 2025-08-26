@@ -31,7 +31,6 @@ end)
 
 vim.o.breakindent = true
 vim.o.linebreak = true
-vim.o.cursorline = true
 vim.o.expandtab = false
 vim.o.shiftwidth = 4
 vim.o.softtabstop = 4
