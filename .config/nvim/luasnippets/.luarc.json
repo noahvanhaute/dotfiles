@@ -1,7 +1,7 @@
 {
   "runtime.version": "LuaJIT",
   "diagnostics.globals": ["vim"],
-  "workspace.checkThirdParty": true,
+  "workspace.checkThirdParty": false,
   "workspace.library": [
     "$VIMRUNTIME",
 	"~/.local/share/nvim/state/luasnip-snip_env/",

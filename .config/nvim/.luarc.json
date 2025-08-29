@@ -5,7 +5,7 @@
     "lua/?/init.lua"
   ],
   "diagnostics.globals": ["vim"],
-  "workspace.checkThirdParty": true,
+  "workspace.checkThirdParty": false,
   "workspace.library": [
     "$VIMRUNTIME",
 	"~/.local/share/nvim/lazy/oil.nvim/",
