@@ -8,6 +8,16 @@ config.enable_wayland = false
 
 config.window_close_confirmation = "NeverPrompt"
 
+-- [[ Keybinds ]]
+
+config.keys = {
+	{
+		key = "Enter",
+		mods = "ALT",
+		action = wezterm.action.DisableDefaultAssignment,
+	},
+}
+
 -- [[ Colors ]]
 -- based on https://github.com/gfguthrie/wezterm-canonical-solarized
 

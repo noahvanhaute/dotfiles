@@ -4,6 +4,15 @@ return {
 	config = function()
 		local fzf = require("fzf-lua")
 		fzf.setup({
+			actions = {
+				files = {
+					true,
+					["alt-enter"] = function(_, opts)
+						local cwd, query = vim.fn.getcwd(), opts.last_query
+						return cwd == "/home/noah/Documents/notes" and vim.cmd("e " .. query .. ".md")
+					end,
+				},
+			},
 			blines = { previewer = false },
 			fzf_colors = { true, ["gutter"] = "-1" },
 		})

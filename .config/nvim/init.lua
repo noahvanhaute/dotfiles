@@ -96,7 +96,20 @@ vim.api.nvim_create_autocmd("FileType", {
 		vim.opt_local.spelllang = { "en_us", "nl" }
 
 		-- Use a custom dictionary that stores unrecognized words for each language
-		vim.opt.spellfile = vim.fn.stdpath("config") .. "/spell/dictionary.utf-8.add"
+		vim.opt_local.spellfile = vim.fn.stdpath("config") .. "/spell/dictionary.utf-8.add"
+
+		vim.keymap.set(
+			"n",
+			"<Tab>",
+			"<cmd>call search('\\[.\\+\\]\\(.\\+\\)')<CR>",
+			{ buffer = true, desc = "Find next link" }
+		)
+		vim.keymap.set(
+			"n",
+			"<S-Tab>",
+			"<cmd>call search('\\[.\\+\\]\\(.\\+\\)', 'b')<CR>",
+			{ buffer = true, desc = "Find previous link" }
+		)
 	end,
 })
 
