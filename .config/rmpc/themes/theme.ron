@@ -19,8 +19,8 @@
 		active_style: (fg: "black", bg: "light_blue", modifiers: "Bold"),
 		inactive_style: (),
 	),
-	highlighted_item_style: (fg: "white", modifiers: "Bold"),
-	current_item_style: (fg: "white", bg: "black", modifiers: "Bold"),
+	highlighted_item_style: (fg: "light_cyan", modifiers: "Bold"),
+	current_item_style: (fg: "light_cyan", bg: "black", modifiers: "Bold"),
 	borders_style: (fg: "light_blue"),
 	highlight_border_style: (fg: "light_blue"),
 	symbols: (
@@ -132,7 +132,7 @@
 				(kind: Property(Widget(ScanStatus)), style: (fg: "blue")),
 				(
 						kind: Property(Widget(States(
-							active_style: (fg: "white", modifiers: "Bold"),
+							active_style: (fg: "light_cyan", modifiers: "Bold"),
 							separator_style: (fg: "light_blue")))
 						),
 						style: (fg: "light_green")
