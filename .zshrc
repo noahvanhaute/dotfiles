@@ -30,6 +30,7 @@ zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
 
 # Color completions
 eval "$(dircolors -b)"
+export LS_COLORS="$LS_COLORS:*#=00;92:*~=00;92:*.bak=00;92:*.crdownload=00;92:*.dpkg-dist=00;92:*.dpkg-new=00;92:*.dpkg-old=00;92:*.dpkg-tmp=00;92:*.old=00;92:*.orig=00;92:*.part=00;92:*.rej=00;92:*.rpmnew=00;92:*.rpmorig=00;92:*.rpmsave=00;92:*.swp=00;92:*.tmp=00;92:*.ucf-dist=00;92:*.ucf-new=00;92:*.ucf-old=00;92"
 zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS} ma=0\;33
 
 # Show dotfiles in completion menu
