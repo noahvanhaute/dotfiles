@@ -36,13 +36,6 @@ zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS} ma=0\;33
 # Show dotfiles in completion menu
 setopt globdots
 
-# nvm stuff
-export NVM_DIR="$HOME/.nvm"
-# Load nvm
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
-# Load nvm bash_completion
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
-
 eval "$(fzf --zsh)"
 eval "$(zoxide init --cmd cd zsh)"
 
