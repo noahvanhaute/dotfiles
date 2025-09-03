@@ -153,7 +153,7 @@ require("lazy").setup({
 
 -- [[ LSP ]]
 
-vim.lsp.enable({ "ltex_plus", "lua_ls", "tinymist" })
+vim.lsp.enable({ "clangd", "ltex_plus", "lua_ls", "tinymist" })
 
 vim.diagnostic.config({ virtual_lines = { current_line = true } })
 

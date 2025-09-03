@@ -3,6 +3,7 @@ return {
 	config = function()
 		require("mason-tool-installer").setup({
 			ensure_installed = {
+				"clangd",
 				"latexindent",
 				"ltex-ls-plus",
 				"lua-language-server",
