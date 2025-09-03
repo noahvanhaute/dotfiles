@@ -1,5 +1,6 @@
 local wezterm = require("wezterm")
 local config = wezterm.config_builder()
+local action = wezterm.action
 
 -- [[ Behaviour ]]
 
@@ -10,11 +11,53 @@ config.window_close_confirmation = "NeverPrompt"
 
 -- [[ Keybinds ]]
 
+config.leader = { key = "t", mods = "CTRL" }
+
 config.keys = {
 	{
 		key = "Enter",
 		mods = "ALT",
 		action = wezterm.action.DisableDefaultAssignment,
+	},
+	{
+		key = "t",
+		mods = "LEADER|CTRL",
+		action = action.SendKey({ key = "t", mods = "CTRL" }),
+	},
+	{
+		key = "s",
+		mods = "LEADER",
+		action = action.SplitVertical({ domain = "CurrentPaneDomain" }),
+	},
+	{
+		key = "v",
+		mods = "LEADER",
+		action = action.SplitHorizontal({ domain = "CurrentPaneDomain" }),
+	},
+	{
+		key = "c",
+		mods = "LEADER",
+		action = action.CloseCurrentPane({ confirm = false }),
+	},
+	{
+		key = "j",
+		mods = "LEADER",
+		action = action.ActivatePaneDirection("Down"),
+	},
+	{
+		key = "k",
+		mods = "LEADER",
+		action = action.ActivatePaneDirection("Up"),
+	},
+	{
+		key = "h",
+		mods = "LEADER",
+		action = action.ActivatePaneDirection("Left"),
+	},
+	{
+		key = "l",
+		mods = "LEADER",
+		action = action.ActivatePaneDirection("Right"),
 	},
 }
 
@@ -71,7 +114,7 @@ config.colors = {
 	selection_fg = "none",
 	selection_bg = base02,
 	scrollbar_thumb = base3,
-	split = base3,
+	split = base0,
 	visual_bell = base0,
 	compose_cursor = orange,
 	copy_mode_active_highlight_fg = { Color = orange },
@@ -127,7 +170,12 @@ config.window_padding = {
 	left = "1cell",
 	right = "1cell",
 	top = "0.5cell",
-	bottom = "0cell",
+	bottom = "0.5cell",
+}
+
+config.inactive_pane_hsb = {
+	saturation = 1,
+	brightness = 1,
 }
 
 return config
