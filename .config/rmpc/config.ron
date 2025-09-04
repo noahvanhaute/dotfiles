@@ -151,8 +151,8 @@
 			name: "Artists",
 			pane: Pane(Artists),
 		),
-		(
-name: "Recent",
+	(
+			name: "Recent",
 			pane: Pane(Directories),
 		),
 	(
