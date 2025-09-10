@@ -77,7 +77,7 @@ vim.api.nvim_create_autocmd("FileType", {
 	group = vim.api.nvim_create_augroup("latex-settings", { clear = true }),
 	pattern = { "tex" },
 	callback = function()
-		vim.o.conceallevel = 2
+		vim.opt_local.conceallevel = 2
 	end,
 })
 

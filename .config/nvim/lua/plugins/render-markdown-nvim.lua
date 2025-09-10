@@ -10,6 +10,7 @@ return {
 
 		require("render-markdown").setup({
 			code = { width = "block", min_width = 90 },
+			heading = { enabled = false },
 			html = { enabled = false },
 			latex = { enabled = false },
 			sign = { enabled = false },
