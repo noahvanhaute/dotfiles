@@ -9,7 +9,7 @@ combi-modes: "drun,recursivebrowser";
 combi-hide-mode-prefix: true;
 display-combi: "Search";
 recursivebrowser {
-		command: "/home/noah/bin/run-or-open";
+		command: "open-or-run";
 	}
 timeout {
       action: "kb-cancel";
