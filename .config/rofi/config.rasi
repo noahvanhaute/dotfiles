@@ -1,0 +1,105 @@
+configuration {
+modes: "combi,calc";
+font: "FiraCode Nerd Font 12";
+show-icons: true;
+icon-theme: "Papirus-Dark";
+cycle: false;
+hover-select: true;
+combi-modes: "drun,recursivebrowser";
+combi-hide-mode-prefix: true;
+display-combi: "Search";
+recursivebrowser {
+		command: "/home/noah/bin/run-or-open";
+	}
+timeout {
+      action: "kb-cancel";
+      delay:  0;
+  }
+}
+
+@theme "/dev/null"
+
+* {
+	base01: #586e75;
+	base02: #073642;
+	base03: #002b36;
+	base0:  #839496;
+	base1:  #93a1a1;
+	green:  #859900;
+	red:    #dc322f;
+
+	background-color: @base03;
+}
+window {
+	width:         40%;
+    padding:       5;
+    border:        2;
+	border-radius: 1;
+	border-color:  @base0;
+	children:      [mainbox];
+	orientation:   vertical;
+}
+mainbox {
+	children: [ inputbar, message, listview ];
+}
+inputbar {
+	color:   @base0;
+	padding: 10px;
+	children: [ prompt, textbox-prompt-colon, entry ];
+}
+textbox-prompt-colon {
+    margin:     0px 0.3000em 0.0000em 0.0000em ;
+    expand:     false;
+    str:        ":";
+    text-color: inherit;
+}
+entry,prompt {
+	color: inherit;
+}
+entry {
+	cursor: text;
+}
+message {
+	padding:      5px;
+	border:       2px 0px 2px 0px;
+	border-color: @base0;
+}
+message,textbox {
+	color: @base0;
+}
+listview {
+	lines: 5;
+}
+element {
+	padding: 10px;
+	color:   @base0;
+}
+element-text {
+	background-color: inherit;
+	color:            inherit;
+	vertical-align:   0.5;
+}
+element-icon {
+    background-color: transparent;
+	vertical-align:   0.5;
+    size:             1.5em;
+	margin:           0 15px 0 0;
+}
+element normal.active {
+	color: @green;
+}
+element normal.urgent {
+	color: @red;
+}
+element selected.normal {
+	background-color: @base01;
+	color:            @base0;
+}
+element selected.active {
+	background-color: @base01;
+	color:            @green;
+}
+element selected.urgent {
+	background-color: @base01;
+	color:            @red;
+}

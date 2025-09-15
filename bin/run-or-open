@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+
+if [[ -x "$1" ]]; then
+	ANSWER=$(echo -e "Open the file\nRun it" | rofi -dmenu -i -p "File is executable, what do you want to do?")
+	case "$ANSWER" in
+		"Open the file")
+			xdg-open "$1" ;;
+		"Run it")
+			"$1" ;;
+		*)
+			exit 1 ;;
+	esac
+else
+	xdg-open "$1"
+fi
