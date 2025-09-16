@@ -94,7 +94,7 @@ element normal.urgent {
 }
 element selected.normal {
 	background-color: @base01;
-	color:            @base0;
+	color:            @base1;
 }
 element selected.active {
 	background-color: @base01;
