@@ -1,15 +1,17 @@
 #!/usr/bin/env bash
 
-if [[ -x "$1" ]]; then
-	ANSWER=$(echo -e "Open the file\nRun it" | rofi -dmenu -i -p "File is executable, what do you want to do?")
-	case "$ANSWER" in
-		"Open the file")
-			xdg-open "$1" ;;
-		"Run it")
-			"$1" ;;
+file=$1
+
+if [[ -x "$file" ]]; then
+	answer=$(printf 'Open the file\nRun it' | rofi -dmenu -i -p 'File is executable, what do you want to do?')
+	case "$answer" in
+		'Open the file')
+			xdg-open "$file" ;;
+		'Run it')
+			"$file" ;;
 		*)
 			exit 1 ;;
 	esac
 else
-	xdg-open "$1"
+	xdg-open "$file"
 fi
