@@ -9,6 +9,7 @@ combi-modes: "drun,recursivebrowser";
 combi-hide-mode-prefix: true;
 display-combi: "Search";
 drun-match-fields: "name";
+terminal: "wezterm";
 recursivebrowser {
 		command: "open-or-run";
 	}
