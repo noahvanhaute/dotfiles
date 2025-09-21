@@ -9,7 +9,7 @@ return {
 		vim.api.nvim_set_hl(0, "@markup.raw.markdown_inline", { link = "Normal" })
 
 		require("render-markdown").setup({
-			code = { width = "block", min_width = 90 },
+			code = { border = "thin", style = "normal", width = "block", min_width = 90 },
 			heading = { enabled = false },
 			html = { enabled = false },
 			latex = { enabled = false },
