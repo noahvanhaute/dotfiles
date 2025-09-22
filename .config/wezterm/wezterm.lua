@@ -157,6 +157,7 @@ config.bold_brightens_ansi_colors = "No"
 -- [[ Appearance ]]
 
 config.font = wezterm.font("Fira Code Nerd Font")
+config.font_size = 12.5
 
 config.use_fancy_tab_bar = false
 
