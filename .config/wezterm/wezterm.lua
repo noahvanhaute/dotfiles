@@ -158,6 +158,7 @@ config.bold_brightens_ansi_colors = "No"
 
 config.font = wezterm.font("Fira Code Nerd Font")
 config.font_size = 12.5
+config.harfbuzz_features = { "calt=0", "clig=0", "liga=0" }
 
 config.use_fancy_tab_bar = false
 
