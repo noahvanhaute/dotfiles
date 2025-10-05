@@ -37,7 +37,6 @@ zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS} ma=0\;33
 setopt globdots
 
 eval "$(fzf --zsh)"
-eval "$(zoxide init --cmd cd zsh)"
 
 export FZF_DEFAULT_OPTS='--color=bg+:black,gutter:bright-black,pointer:bright-magenta,prompt:bright-magenta'
 
