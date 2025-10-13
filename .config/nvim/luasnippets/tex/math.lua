@@ -46,19 +46,20 @@ local trig2 = {
 	{ "o", "\\omega" },
 	{ "O", "\\Omega" },
 }
-return {
-	(function()
-		local greek = {}
-		for _, v in ipairs(trig2) do
-			greek[#greek + 1] = s(
-				{ trig = trig1 .. v[1], snippetType = "autosnippet" },
-				t(v[2]),
-				{ condition = in_mathzone }
-			)
-		end
-		return unpack(greek)
-	end)(),
 
+local greek_snippets = (function()
+	local snippets = {}
+	for _, v in ipairs(trig2) do
+		snippets[#snippets + 1] = s(
+			{ trig = trig1 .. v[1], snippetType = "autosnippet" },
+			t(v[2]),
+			{ condition = in_mathzone }
+		)
+	end
+	return snippets
+end)()
+
+return vim.list_extend(greek_snippets, {
 	-- Inline math
 	s("im", fmta("\\(<>\\)", { i(1) })),
 
@@ -348,4 +349,4 @@ return {
 
 	-- Cotangent
 	s({ trig = "cot", snippetType = "autosnippet" }, t("\\cot"), { condition = in_mathzone }),
-}
+})
