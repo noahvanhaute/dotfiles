@@ -1,10 +1,10 @@
--- Function to pass as a condintion for only tiggering in math mode
+-- Function to pass as a condition for only triggering in math mode
 local in_mathzone = function()
 	-- Requires the VimTeX plugin
 	return vim.fn["vimtex#syntax#in_mathzone"]() == 1
 end
 
--- Greek letter tiggers
+-- Greek letter triggers
 local trig1 = "g"
 local trig2 = {
 	{ "a", "\\alpha" },
@@ -154,7 +154,7 @@ return vim.list_extend(greek_snippets, {
 	-- Roman text
 	s({ trig = "trm", snippetType = "autosnippet" }, fmta("\\textrm{<>}", { i(1) }), { condition = in_mathzone }),
 
-	-- Caligraphic math
+	-- Calligraphic math
 	s({ trig = "cal", snippetType = "autosnippet" }, fmta("\\mathcal{<>}", { i(1) }), { condition = in_mathzone }),
 
 	-- Blackboard bold math
@@ -233,10 +233,10 @@ return vim.list_extend(greek_snippets, {
 	-- Square root
 	s({ trig = "sq", snippetType = "autosnippet" }, fmta("\\sqrt{<>}", { i(1) }), { condition = in_mathzone }),
 
-	-- Centered elipses
+	-- Centered ellipses
 	s({ trig = "cel", snippetType = "autosnippet" }, t("\\cdots"), { condition = in_mathzone }),
 
-	-- Elipses
+	-- Ellipses
 	s({ trig = "el", snippetType = "autosnippet" }, t("\\ldots"), { condition = in_mathzone }),
 
 	-- Differential

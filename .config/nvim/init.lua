@@ -1,4 +1,4 @@
--- [[ Bootsrap package manager ]]
+-- [[ Bootstrap package manager ]]
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not (vim.uv or vim.loop).fs_stat(lazypath) then
 	local lazyrepo = "https://github.com/folke/lazy.nvim.git"
@@ -52,7 +52,7 @@ vim.o.undofile = true
 vim.o.updatetime = 250
 vim.o.winborder = "rounded"
 
--- [[ Keymamps ]]
+-- [[ Keymaps ]]
 
 vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>", { desc = "Clear search highlights with <Esc>" })
 vim.keymap.set("t", "<Esc><Esc>", "<C-\\><C-n>", { desc = "Exit terminal mode" })
@@ -92,7 +92,7 @@ vim.api.nvim_create_autocmd("FileType", {
 
 		-- The utf-8.spl and .utf-8.sug files for your languages should be downloaded from
 		--  https://ftp.nluug.nl/vim/runtime/spell/
-		--  (Enlgish is provided by default)
+		--  (English is provided by default)
 		--  and placed in ~/.config/nvim/spell
 		vim.opt_local.spelllang = { "en_us", "nl" }
 
