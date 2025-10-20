@@ -156,7 +156,7 @@ config.bold_brightens_ansi_colors = "No"
 
 -- [[ Appearance ]]
 
-config.font = wezterm.font("Iosevka")
+config.font = wezterm.font("Iosevka Term")
 config.font_size = 13.5
 config.harfbuzz_features = { "calt=0", "clig=0", "liga=0" }
 
