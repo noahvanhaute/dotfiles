@@ -29,6 +29,7 @@ vim.schedule(function()
 	vim.o.clipboard = "unnamedplus"
 end)
 
+-- `opt` needed sometimes as it accepts tables
 vim.o.breakindent = true
 vim.o.linebreak = true
 vim.o.expandtab = false
@@ -38,7 +39,6 @@ vim.o.tabstop = 4
 vim.o.ignorecase = true
 vim.o.smartcase = true
 vim.o.list = true
--- Use `opt` here as it has an interface for interacting with tables
 vim.opt.listchars = { tab = "  ", trail = "·" }
 vim.o.number = true
 vim.o.relativenumber = true
@@ -50,6 +50,7 @@ vim.o.timeoutlen = 500
 vim.o.undofile = true
 vim.o.updatetime = 250
 vim.o.winborder = "rounded"
+vim.opt.completeopt = { "fuzzy", "menuone", "noinsert", "popup" }
 
 -- [[ Keymaps ]]
 
