@@ -14,6 +14,7 @@ return {
 			html = { enabled = false },
 			latex = { enabled = false },
 			sign = { enabled = false },
+			yaml = { enabled = false },
 		})
 	end,
 }
