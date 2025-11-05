@@ -1,16 +1,15 @@
-# Ignore log files
 *.log
 
-# Ignore mpd database
-database
-
-# Ignore juliaup files and julia logs
-.julia/juliaup/
-.julia/logs
-
-# Ignore julia package related directories
 .julia/compiled
 .julia/environments
+.julia/juliaup
+.julia/logs
 .julia/packages
 .julia/registries
 .julia/scratchspaces
+
+.local/share/nvim/lazy
+.local/share/nvim/mason
+
+# `mpd` database
+database
