@@ -20,6 +20,7 @@ return {
 					SpellRare = { sp = colors.cyan, undercurl = true },
 					Statement = { fg = colors.base0 },
 					Type = { fg = colors.base0 },
+					Comment = { fg = colors.green },
 				}
 				return groups
 			end,
