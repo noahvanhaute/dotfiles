@@ -3,6 +3,7 @@ return {
 	config = function()
 		require("mason-tool-installer").setup({
 			ensure_installed = {
+				"black",
 				"clangd",
 				"latexindent",
 				"ltex-ls-plus",
