@@ -9,9 +9,11 @@ return {
 			on_highlights = function(colors)
 				---@type solarized.highlights
 				local groups = {
+					Comment = { fg = colors.green },
 					Constant = { fg = colors.blue },
 					Function = { fg = colors.base0 },
 					Identifier = { fg = colors.base0 },
+					MatchParen = { fg = colors.orange },
 					Parameter = { fg = colors.base0 },
 					Property = { fg = colors.base0 },
 					SpellBad = { underline = false, strikethrough = false, sp = colors.red, undercurl = true },
@@ -20,7 +22,6 @@ return {
 					SpellRare = { sp = colors.cyan, undercurl = true },
 					Statement = { fg = colors.base0 },
 					Type = { fg = colors.base0 },
-					Comment = { fg = colors.green },
 				}
 				return groups
 			end,
