@@ -5,16 +5,12 @@ return {
 	build = ":TSUpdate",
 	config = function()
 		require("nvim-treesitter.configs").setup({
-			highlight = {
-				enable = true,
-				disable = { "latex" },
-			},
+			highlight = { enable = true },
 			indent = { enable = true },
 			ensure_installed = {
 				"bash",
 				"gitignore",
 				"json",
-				"latex",
 				"markdown_inline",
 				"ron",
 				"vim",
