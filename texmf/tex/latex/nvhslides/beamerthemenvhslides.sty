@@ -11,10 +11,25 @@
 % Turn off navigation symbols
 \setbeamertemplate{navigation symbols}{}
 
-\setmainfont{IBM Plex Sans}[RawFeature={+zero}]
-\setsansfont{IBM Plex Sans}[RawFeature={+zero}]
-\setmonofont{IBM Plex Mono}[RawFeature={+zero}]
-\setmathfont{IBM Plex Math}[RawFeature={+zero}]
+\setmainfont[
+	BoldFont = {IBMPlexSans-Bold.otf},
+	ItalicFont = {IBMPlexSans-Italic.otf},
+	BoldItalicFont = {IBMPlexSans-BoldItalic.otf},
+	RawFeature={+zero}
+]{IBMPlexSans-Regular.otf}
+\setsansfont[
+	BoldFont = {IBMPlexSans-Bold.otf},
+	ItalicFont = {IBMPlexSans-Italic.otf},
+	BoldItalicFont = {IBMPlexSans-BoldItalic.otf},
+	RawFeature={+zero}
+]{IBMPlexSans-Regular.otf}
+\setmonofont[
+	BoldFont = {IBMPlexMono-Bold.otf},
+	ItalicFont = {IBMPlexMono-Italic.otf},
+	BoldItalicFont = {IBMPlexMono-BoldItalic.otf},
+	RawFeature={+zero}
+]{IBMPlexMono-Regular.otf}
+\setmathfont[RawFeature={+zero}]{IBMPlexMath-Regular.otf}
 \usefonttheme{professionalfonts}
 
 % Set default TikZ arrow shape
