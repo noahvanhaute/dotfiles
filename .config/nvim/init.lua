@@ -30,6 +30,11 @@ vim.schedule(function()
 end)
 
 -- `opt` needed sometimes as it accepts tables
+-- The utf-8.spl and .utf-8.sug files for your languages should be downloaded from
+--  https://ftp.nluug.nl/vim/runtime/spell/
+--  (English is provided by default)
+--  and placed in ~/.config/nvim/spell
+-- Using a custom dictionary that stores unrecognized words for each language
 vim.o.breakindent = true
 vim.o.linebreak = true
 vim.o.expandtab = false
@@ -44,6 +49,8 @@ vim.o.number = true
 vim.o.relativenumber = true
 vim.o.mouse = "a"
 vim.o.scrolloff = 10
+vim.o.spellfile = vim.fn.stdpath("config") .. "/spell/dictionary.utf-8.add"
+vim.opt.spelllang = { "en_us", "nl" }
 vim.o.splitright = true
 vim.o.splitbelow = true
 vim.o.timeoutlen = 500
@@ -69,48 +76,6 @@ vim.api.nvim_create_autocmd("BufReadPost", {
 		if mark[1] > 0 and mark[1] <= lcount then
 			pcall(vim.api.nvim_win_set_cursor, 0, mark)
 		end
-	end,
-})
-
-vim.api.nvim_create_autocmd("FileType", {
-	desc = "LaTeX specific settings",
-	group = vim.api.nvim_create_augroup("latex-settings", { clear = true }),
-	pattern = { "tex" },
-	callback = function()
-		vim.opt_local.conceallevel = 2
-	end,
-})
-
-vim.api.nvim_create_autocmd("FileType", {
-	desc = "Markdown specific settings",
-	group = vim.api.nvim_create_augroup("markdown-settings", { clear = true }),
-	pattern = { "markdown" },
-	callback = function()
-		-- Turn off spell for floating windows so that `vim.lsp.buf.hover()
-		--  isn't spellchecked
-		vim.opt_local.spell = not vim.api.nvim_win_get_config(0).zindex
-
-		-- The utf-8.spl and .utf-8.sug files for your languages should be downloaded from
-		--  https://ftp.nluug.nl/vim/runtime/spell/
-		--  (English is provided by default)
-		--  and placed in ~/.config/nvim/spell
-		vim.opt_local.spelllang = { "en_us", "nl" }
-
-		-- Use a custom dictionary that stores unrecognized words for each language
-		vim.opt_local.spellfile = vim.fn.stdpath("config") .. "/spell/dictionary.utf-8.add"
-
-		vim.keymap.set(
-			"n",
-			"<Tab>",
-			"<cmd>call search('\\[.\\+\\]\\(.\\+\\)')<CR>",
-			{ buffer = true, desc = "Find next link" }
-		)
-		vim.keymap.set(
-			"n",
-			"<S-Tab>",
-			"<cmd>call search('\\[.\\+\\]\\(.\\+\\)', 'b')<CR>",
-			{ buffer = true, desc = "Find previous link" }
-		)
 	end,
 })
 
