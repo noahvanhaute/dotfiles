@@ -7,7 +7,6 @@ return {
 	config = function()
 		require("nvim-treesitter").install({
 			"bash",
-			"ron",
 		})
 	end,
 }
