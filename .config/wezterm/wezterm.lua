@@ -86,24 +86,24 @@ config.colors = {
 	-- https://ethanschoonover.com/solarized/#usage-development
 	-- "none" for selection_fg since the solarized selection_bg is designed to work without it
 	ansi = {
-		base02,
+		base03,
 		red,
 		green,
 		yellow,
 		blue,
-		magenta,
+		violet,
 		cyan,
-		base2,
+		base3,
 	},
 	brights = {
-		base03,
+		base02,
 		orange,
 		base01,
 		base00,
 		base0,
-		violet,
+		magenta,
 		base1,
-		base3,
+		base2,
 	},
 
 	foreground = base0,
