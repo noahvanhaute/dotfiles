@@ -7,10 +7,7 @@ return {
 	config = function()
 		require("nvim-treesitter").install({
 			"bash",
-			"gitignore",
-			"json",
 			"ron",
-			"yaml",
 		})
 	end,
 }
