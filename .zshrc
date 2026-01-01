@@ -1,4 +1,4 @@
-PROMPT='%F{blue}%n@%m:%~'$'\n''%F{cyan}$ %f'
+PROMPT='%F{blue}%n@%m:%~'$'\n''%F{cyan}%# %f'
 
 [ -f ~/.alias ] && source ~/.alias
 
