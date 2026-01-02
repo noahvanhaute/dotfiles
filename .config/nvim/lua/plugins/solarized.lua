@@ -11,6 +11,7 @@ return {
 				local groups = {
 					Comment = { fg = colors.green },
 					Constant = { fg = colors.blue },
+					EndOfBuffer = { fg = colors.base0 },
 					Function = { fg = colors.base0 },
 					Identifier = { fg = colors.base0 },
 					MatchParen = { fg = colors.orange },
