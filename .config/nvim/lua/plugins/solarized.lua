@@ -22,6 +22,8 @@ return {
 					SpellLocal = { sp = colors.yellow, undercurl = true },
 					SpellRare = { sp = colors.cyan, undercurl = true },
 					Statement = { fg = colors.base0 },
+					StatusLine = { bg = colors.base02 },
+					StatusLineNC = { bg = colors.base02 },
 					Type = { fg = colors.base0 },
 				}
 				return groups
