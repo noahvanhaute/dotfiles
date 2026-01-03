@@ -10,6 +10,7 @@
 
 .local/share/nvim/lazy
 .local/share/nvim/mason
+.local/share/nvim/site
 
 # `mpd` database
 database
