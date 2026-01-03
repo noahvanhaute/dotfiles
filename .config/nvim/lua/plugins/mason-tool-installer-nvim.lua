@@ -4,7 +4,6 @@ return {
 		require("mason-tool-installer").setup({
 			ensure_installed = {
 				"black",
-				"clangd",
 				"latexindent",
 				"ltex-ls-plus",
 				"lua-language-server",
