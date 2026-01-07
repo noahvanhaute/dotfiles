@@ -87,26 +87,6 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 	end,
 })
 
--- [[ WSL ]]
-
--- Clipboard needs to be redefined when using WSL
-if vim.fn.has("wsl") == 1 then
-	vim.g.clipboard = {
-		name = "WslClipboard",
-		copy = {
-			["+"] = "win32yank.exe -i --crlf",
-			["*"] = "win32yank.exe -i --crlf",
-		},
-		paste = {
-			["+"] = "win32yank.exe -o --lf",
-			["*"] = "win32yank.exe -o --lf",
-		},
-		cache_enabled = true,
-	}
-	vim.keymap.set({ "n", "v" }, "y", '"+y', { noremap = true, silent = true })
-	vim.keymap.set({ "n", "v" }, "p", '"+p', { noremap = true, silent = true })
-end
-
 -- [[ Package manager ]]
 
 require("lazy").setup({
