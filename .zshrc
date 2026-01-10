@@ -1,13 +1,14 @@
 PROMPT='%F{blue}%n@%m:%~'$'\n''%F{cyan}%# %f'
 
-[ -f ~/.alias ] && source ~/.alias
-
 zmodload zsh/complist
 autoload -U compinit && compinit
 autoload -U colors && colors
 
 bindkey '^p' history-search-backward
 bindkey '^n' history-search-forward
+
+alias ls='ls --color'
+alias vim='nvim'
 
 # History
 HISTSIZE=5000
