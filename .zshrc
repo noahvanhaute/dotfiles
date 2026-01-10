@@ -5,7 +5,6 @@ PROMPT='%F{blue}%n@%m:%~'$'\n''%F{cyan}%# %f'
 zmodload zsh/complist
 autoload -U compinit && compinit
 autoload -U colors && colors
-autoload -Uz add-zsh-hook
 
 bindkey '^p' history-search-backward
 bindkey '^n' history-search-forward
@@ -36,22 +35,6 @@ zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS} ma=0\;33
 
 # Show dotfiles in completion menu
 setopt globdots
-
-# if command -v tmux &> /dev/null && [[ -n "$PS1" ]] && [[ ! "$TERM" =~ screen ]] && [[ ! "$TERM" =~ tmux ]] && [[ -z "$TMUX" ]]; then
-#   exec tmux
-# fi
-
-function osc7-pwd() {
-    emulate -L zsh
-    setopt extendedglob
-    local LC_ALL=C
-    printf '\e]7;file://%s%s\e\' $HOST ${PWD//(#m)([^@-Za-z&-;_~])/%${(l:2::0:)$(([##16]#MATCH))}}
-}
-
-function chpwd-osc7-pwd() {
-    (( ZSH_SUBSHELL )) || osc7-pwd
-}
-add-zsh-hook -Uz chpwd chpwd-osc7-pwd
 
 eval "$(fzf --zsh)"
 
