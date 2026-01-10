@@ -57,7 +57,7 @@ vim.o.timeoutlen = 500
 vim.o.undofile = true
 vim.o.updatetime = 250
 vim.o.winborder = "rounded"
-vim.opt.completeopt = { "fuzzy", "menuone", "noinsert", "popup" }
+vim.opt.completeopt = { "menu", "preinsert", "popup" }
 
 -- [[ Keymaps ]]
 
