@@ -87,6 +87,10 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 	end,
 })
 
+-- [[ Highlight groups ]]
+
+vim.api.nvim_set_hl(0, "@string.documentation.python", { link = "Comment" })
+
 -- [[ Package manager ]]
 
 require("lazy").setup({
