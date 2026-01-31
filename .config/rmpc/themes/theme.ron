@@ -16,13 +16,13 @@
 	preview_metadata_group_style: (fg: "yellow", modifiers: "Bold"),
 	tab_bar: (
 		enabled: true,
-		active_style: (fg: "black", bg: "light_blue", modifiers: "Bold"),
+		active_style: (fg: "black", bg: "white", modifiers: "Bold"),
 		inactive_style: (),
 	),
-	highlighted_item_style: (fg: "light_cyan", modifiers: "Bold"),
-	current_item_style: (fg: "light_cyan", bg: "dark_gray", modifiers: "Bold"),
-	borders_style: (fg: "light_blue"),
-	highlight_border_style: (fg: "light_blue"),
+	highlighted_item_style: (fg: "white", modifiers: "Bold"),
+	current_item_style: (fg: "white", bg: "black", modifiers: "Bold"),
+	borders_style: (fg: "white"),
+	highlight_border_style: (fg: "white"),
 	symbols: (
 		song: "🎜",
 		dir: "🖿",
@@ -43,14 +43,14 @@
 	progress_bar: (
 		symbols: ["█", "█", "█", "█", "█"],
 		track_style: (fg: "black"),
-		elapsed_style: (fg: "light_blue"),
-		thumb_style: (fg: "light_blue"),
+		elapsed_style: (fg: "white"),
+		thumb_style: (fg: "white"),
 	),
 	scrollbar: (
 		symbols: ["│", "█", "▲", "▼"],
-		track_style: (fg: "light_blue"),
-		ends_style: (fg: "light_blue"),
-		thumb_style: (fg: "light_blue"),
+		track_style: (fg: "gray"),
+		ends_style: (fg: "gray"),
+		thumb_style: (fg: "gray"),
 	),
 	song_table_format: [
 	(
@@ -169,6 +169,6 @@
 		timestamp: false
 	),
 	cava: (
-		bar_color: Single("light_blue"),
+		bar_color: Single("white"),
 	),
 )

@@ -131,8 +131,8 @@
 							(size: "50%", pane: Pane(Property(content: [
 								(kind: Text(" ")),
 								(kind:Property(Widget(States(
-										active_style: (fg: "light_cyan", modifiers: "Bold"),
-										separator_style: (fg: "light_blue")
+										active_style: (fg: "white", modifiers: "Bold"),
+										separator_style: (fg: "white")
 									))))
 								], align: Left))),
 							(size: "50%", pane: Pane(Property(content: [
