@@ -115,7 +115,7 @@ local highlights = function(colors)
 	hi["TabLineFill"] = { fg = colors.fg_0, bg = colors.bg_1 }
 	hi["TabLineSel"] = { fg = colors.fg_1, bg = colors.bg_2 }
 	hi["Title"] = { fg = "NONE", bg = "NONE" }
-	hi["Visual"] = { fg = "NONE", bg = colors.bg_1 }
+	hi["Visual"] = { fg = "NONE", bg = colors.bg_2 }
 	hi["VisualNOS"] = { fg = "NONE", bg = "NONE" }
 	hi["WarningMsg"] = { fg = colors.yellow, bg = "NONE" }
 	hi["WildMenu"] = { fg = "NONE", bg = "NONE" }
