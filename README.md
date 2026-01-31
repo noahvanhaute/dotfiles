@@ -18,12 +18,8 @@ sudo stow etc -t /etc
 ```
 
 ## Acknowledgments
-A good chunk of my Neovim configuration came from [kickstart.nvim](https://github.com/nvim-lua/kickstart.nvim).
-
-The contents of `.luarc.json` for the Neovim config folder were inspired by [this video](https://www.youtube.com/watch?v=UE6XQTAxwE0) from Marco Peluso.
-
 My Python compiler plugin came from siho's answer on [this Stack Exchange question](https://vi.stackexchange.com/questions/5110/quickfix-support-for-python-tracebacks).
 
 My implementation of [Selenized Black](https://github.com/jan-warchol/selenized/blob/master/the-values.md#selenized-black) used [lucaaf3's implementation](https://github.com/lucaaf3/selenized-black.nvim) as a starting point.
 
-My KDE Plasma color scheme is a near exact copy of [kde-plasma-solarized](https://github.com/ret2src/kde-plasma-solarized).
+The contents of `.luarc.json` for the Neovim config folder were inspired by [this video](https://www.youtube.com/watch?v=UE6XQTAxwE0) from Marco Peluso.
