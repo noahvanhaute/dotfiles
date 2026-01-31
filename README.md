@@ -26,6 +26,4 @@ My Python compiler plugin came from siho's answer on [this Stack Exchange questi
 
 My implementation of [Selenized Black](https://github.com/jan-warchol/selenized/blob/master/the-values.md#selenized-black) used [lucaaf3's implementation](https://github.com/lucaaf3/selenized-black.nvim) as a starting point.
 
-My WezTerm color configuration is based on [wezterm-canonical-solarized](https://github.com/gfguthrie/wezterm-canonical-solarized).
-
 My KDE Plasma color scheme is a near exact copy of [kde-plasma-solarized](https://github.com/ret2src/kde-plasma-solarized).
