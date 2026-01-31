@@ -5,9 +5,6 @@ return {
 	---@type render.md.UserConfig
 
 	config = function()
-		vim.api.nvim_set_hl(0, "@markup.link.label.markdown_inline", { link = "Conceal", underline = true })
-		vim.api.nvim_set_hl(0, "@markup.raw.markdown_inline", { link = "Normal" })
-
 		require("render-markdown").setup({
 			code = { border = "thin", style = "normal", width = "block", min_width = 90 },
 			heading = { enabled = false },

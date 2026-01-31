@@ -15,6 +15,7 @@ return {
 			},
 			blines = { previewer = false },
 			fzf_colors = { true, ["gutter"] = "-1" },
+			winopts = { backdrop = 100 },
 		})
 
 		vim.keymap.set("n", "<leader>fb", fzf.buffers, { desc = "[F]ind existing [B]uffers" })

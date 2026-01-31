@@ -15,6 +15,9 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
+-- [[ Color scheme ]]
+vim.cmd.colorscheme("selenized-black")
+
 -- [[ Globals ]]
 
 vim.g.mapleader = " "
@@ -87,17 +90,13 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 	end,
 })
 
--- [[ Highlight groups ]]
-
-vim.api.nvim_set_hl(0, "@string.documentation.python", { link = "Comment" })
-
 -- [[ Package manager ]]
 
 require("lazy").setup({
 	checker = { enabled = false },
-	install = { colorscheme = { "solarized" } },
+	install = { colorscheme = { "selenized-black" } },
 	spec = { { import = "plugins" } },
-	ui = { border = "rounded" },
+	ui = { backdrop = 100, border = "rounded" },
 })
 
 -- [[ LSP ]]
