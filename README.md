@@ -1,20 +1,20 @@
 # Dotfiles
-
 Personal settings and configurations.
 Management is done with [GNU Stow](https://www.gnu.org/software/stow/).
 
 ## Prerequisites
-
 - `stow` must be installed.
 
 ## Usage
-
 Clone this repo in `~` and create all symlinks.
 This will put all the config files in the appropriate locations.
+> [!WARNING]
+> This will overwrite existing configs, you can `git status` or `git diff` before executing the last command to see what will be overwritten.
 ```console
 cd ~/dotfiles
-stow .
+stow --adopt .
 sudo stow etc -t /etc
+git reset --hard
 ```
 
 ## Acknowledgments
