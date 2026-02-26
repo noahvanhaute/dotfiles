@@ -59,6 +59,7 @@ vim.o.splitbelow = true
 vim.o.timeoutlen = 500
 vim.o.undofile = true
 vim.o.updatetime = 250
+vim.o.wildignorecase = true
 vim.o.winborder = "rounded"
 vim.opt.completeopt = { "menu", "preinsert", "popup" }
 
