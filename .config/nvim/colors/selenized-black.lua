@@ -262,12 +262,12 @@ local highlights = function(colors)
 	hi["@tag.delimiter"] = "Delimiter"
 
 	-- Markup
-	hi["@markup.raw"] = { bg = colors.bg_1 }
+	hi["@markup.raw"] = "Normal"
 	hi["@markup.heading"] = { fg = colors.fg_1, bold = true }
 	hi["@markup.link.url"] = "Underlined"
 
 	-- render-markdown.vim
-	hi["RenderMarkdownCode"] = "@markup.raw"
+	hi["RenderMarkdownCode"] = { bg = colors.bg_1 }
 
 	for group, highlights in pairs(hi) do
 		highlight(group, highlights)
