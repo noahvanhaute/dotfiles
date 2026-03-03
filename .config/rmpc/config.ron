@@ -21,6 +21,7 @@
 	directories_sort: ModifiedTime(group_by_type: true, reverse: true),
 	album_art: (
 		method: Auto,
+		order: FileFirst,
 		max_size_px: (width: 1200, height: 1200),
 		disabled_protocols: ["http://", "https://"],
 		vertical_align: Center,
