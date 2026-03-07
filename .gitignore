@@ -1,13 +1,5 @@
 *.log
 
-.julia/compiled
-.julia/environments
-.julia/juliaup
-.julia/logs
-.julia/packages
-.julia/registries
-.julia/scratchspaces
-
 .local/share/nvim/lazy
 .local/share/nvim/mason
 .local/share/nvim/site
