@@ -74,14 +74,14 @@ return {
 		"fg",
 		fmta(
 			[=[
-			\begin{figure}[H]
+			\begin{figure}[<>]
 				\centering
 				\includegraphics[<>]{<>}
 				\caption{<>}
-				\label{fig:<>}
+				\label{fig-<>}
 			\end{figure}
 			]=],
-			{ i(1), i(2), i(3), i(4) }
+			{ i(1), i(2), i(3), i(4), i(5) }
 		)
 	),
 
@@ -90,14 +90,14 @@ return {
 		"tfg",
 		fmta(
 			[=[
-			\begin{figure}[H]
+			\begin{figure}[<>]
 				\centering
 				\input{figures/<>}
 				\caption{<>}
-				\label{fig:<>}
+				\label{fig-<>}
 			\end{figure}
 			]=],
-			{ i(1), i(2), i(3) }
+			{ i(1), i(2), i(3), i(4) }
 		)
 	),
 

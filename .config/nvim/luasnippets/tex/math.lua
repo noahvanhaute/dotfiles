@@ -77,7 +77,7 @@ return vim.list_extend(greek_snippets, {
 			[=[
             \begin{equation}
                 <>
-                \label{eq:<>}
+                \label{eq-<>}
             \end{equation}
             ]=],
 			{ i(1), i(2) }
@@ -91,7 +91,7 @@ return vim.list_extend(greek_snippets, {
 			[=[
             \begin{align}
                 <>
-                \label{eq:<>}
+                \label{eq-<>}
             \end{align}
             ]=],
 			{ i(1), i(2) }
@@ -173,6 +173,15 @@ return vim.list_extend(greek_snippets, {
 	s(
 		{ trig = "([%a%)%]%}])ts", regTrig = true, wordTrig = false, snippetType = "autosnippet" },
 		fmta("<>_{\\text{<>}}", { f(function(_, snip)
+			return snip.captures[1]
+		end), i(1) }),
+		{ condition = in_mathzone }
+	),
+
+	-- Roman subscript
+	s(
+		{ trig = "([%a%)%]%}])rs", regTrig = true, wordTrig = false, snippetType = "autosnippet" },
+		fmta("<>_{\\mathrm{<>}}", { f(function(_, snip)
 			return snip.captures[1]
 		end), i(1) }),
 		{ condition = in_mathzone }
