@@ -7,4 +7,6 @@ if [ -d /mnt/c/Windows ]; then
 	export BROWSER=firefox.exe
 fi
 
+export TEXMFHOME=$XDG_DATA_HOME/texmf
+
 PATH="$PATH:$HOME/.opt/texlive/current/bin/x86_64-linux"
