@@ -5,6 +5,8 @@ if [ -d /mnt/c/Windows ]; then
 	PATH="$PATH:/mnt/c/Program Files/Mozilla Firefox"
 
 	export BROWSER=firefox.exe
+	export XDG_CONFIG_HOME="$HOME/.config"
+	export XDG_DATA_HOME="$HOME/.local/share"
 fi
 
 export TEXMFHOME=$XDG_DATA_HOME/texmf
