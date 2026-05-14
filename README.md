@@ -13,7 +13,7 @@ This will put all the config files in the appropriate locations.
 ```console
 cd ~/dotfiles
 stow --adopt .
-sudo stow etc -t /etc
+sudo stow --adopt etc -t /etc
 git reset --hard
 ```
 
