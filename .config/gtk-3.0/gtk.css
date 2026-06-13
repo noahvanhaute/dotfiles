@@ -1,0 +1,5 @@
+@import 'colors.css';
+
+decoration, headerbar.titlebar {
+	box-shadow: none;
+}
