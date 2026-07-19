@@ -66,8 +66,6 @@ vim.opt.completeopt = { "menu", "preinsert", "popup" }
 -- [[ Keymaps ]]
 
 vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>", { desc = "Clear search highlights with <Esc>" })
-vim.keymap.set("t", "<Esc><Esc>", "<C-\\><C-n>", { desc = "Exit terminal mode" })
-vim.keymap.set("n", "<leader>q", vim.diagnostic.setloclist, { desc = "Open diagnostic [Q]uickfix list" })
 
 -- [[ Autocommands ]]
 
@@ -99,9 +97,3 @@ require("lazy").setup({
 	spec = { { import = "plugins" } },
 	ui = { backdrop = 100, border = "rounded" },
 })
-
--- [[ LSP ]]
-
-vim.lsp.enable({ "lua_ls", "tinymist" })
-
-vim.diagnostic.config({ virtual_lines = { current_line = true } })

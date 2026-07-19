@@ -98,7 +98,7 @@ local highlights = function(colors)
 	hi["PmenuSel"] = { fg = "NONE", bg = colors.bg_2 }
 	hi["PmenuThumb"] = { fg = "NONE", bg = colors.dim_0 }
 	hi["Question"] = { fg = "NONE", bg = "NONE" }
-	hi["QuickFixLine"] = "Search"
+	hi["QuickFixLine"] = { fg = colors.yellow, bg = "NONE" }
 	hi["Search"] = { fg = colors.yellow, bg = "NONE", reverse = true }
 	hi["SignColumn"] = { fg = "NONE", bg = colors.bg_0 }
 	hi["SnippetTabstop"] = { fg = "NONE", bg = colors.bg_1, italic = true }
@@ -211,6 +211,7 @@ local highlights = function(colors)
 	hi["@property"] = "Identifier"
 	hi["@type"] = "Type"
 	hi["@type.builtin"] = "Special"
+	hi["@type.builtin.c"] = { fg = hi["Type"].fg, bold = true }
 	hi["@type.definition"] = "TypeDef"
 
 	-- Functions
