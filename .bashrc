@@ -21,5 +21,7 @@ alias ls='ls --color'
 alias vim='nvim'
 
 HISTCONTROL=erasedups:ignoredups
+HISTSIZE=10000
+HISTFILESIZE=10000
 
 export GIT_PS1_SHOWUPSTREAM="auto"
