@@ -23,8 +23,8 @@
 	borders_style: (fg: "white"),
 	highlight_border_style: (fg: "white"),
 	symbols: (
-		song: "🎜",
-		dir: "🖿",
+		song: "🎜 ",
+		dir: "🖿 ",
 		playlist: "🎶",
 		marker: "┃",
 		ellipsis: "...",
