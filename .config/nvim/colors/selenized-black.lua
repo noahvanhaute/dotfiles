@@ -238,6 +238,7 @@ local highlights = function(colors)
 	hi["@keyword.luadoc"] = { bold = false, nocombine = true }
 	hi["@keyword.modifier"] = "Keyword"
 	hi["@keyword.operator"] = "Operator"
+	hi["@keyword.operator.python"] = "Statement"
 	hi["@keyword.repeat"] = "Repeat"
 	hi["@keyword.return"] = "Statement"
 	hi["@keyword.type"] = "Keyword"
