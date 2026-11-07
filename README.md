@@ -11,10 +11,10 @@ This will put all the config files in the appropriate locations.
 > [!WARNING]
 > This will overwrite existing configs, you can `git status` or `git diff` before executing the last command to see what will be overwritten.
 ```console
-cd ~/dotfiles
-stow --adopt .
-sudo stow --adopt etc -t /etc
-git reset --hard
+$ cd ~/dotfiles
+$ stow --adopt .
+$ sudo stow --adopt etc -t /etc
+$ git reset --hard
 ```
 
 ## Acknowledgments
