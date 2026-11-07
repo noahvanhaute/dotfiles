@@ -1,7 +1,13 @@
+-- Function to pass as a condition for only triggering outside of math mode
+local not_in_mathzone = function()
+	-- Requires the VimTeX plugin
+	return vim.fn["vimtex#syntax#in_mathzone"]() == 0
+end
+
 return {
 	-- Chapter
 	s(
-		"ch",
+		{ trig = "ch", condition = not_in_mathzone },
 		fmta(
 			[=[
 			\chapter{<>}
@@ -102,7 +108,7 @@ return {
 	),
 
 	-- Label
-	s("la", fmta("\\label{<>}", { i(1) })),
+	s("lb", fmta("\\label{<>}", { i(1) })),
 
 	-- Item
 	s("it", t("\\item ")),
@@ -118,8 +124,4 @@ return {
 
 	-- Clever reference
 	s("CC", fmta("\\Cref{<>}", { i(1) })),
-
-	-- Chemical equation
-	-- Requires mhchem package
-	s("ce", fmta("\\ce{<>}", { i(1) })),
 }

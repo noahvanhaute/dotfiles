@@ -4,57 +4,51 @@ local in_mathzone = function()
 	return vim.fn["vimtex#syntax#in_mathzone"]() == 1
 end
 
--- Greek letter triggers
-local trig1 = "g"
-local trig2 = {
-	{ "a", "\\alpha" },
-	{ "b", "\\beta" },
-	{ "g", "\\gamma" },
-	{ "G", "\\Gamma" },
-	{ "d", "\\delta" },
-	{ "D", "\\Delta" },
+local greek_letter_triggers = {
+	{ "al", "\\alpha" },
+	{ "be", "\\beta" },
+	{ "ch", "\\chi" },
+	{ "de", "\\delta" },
+	{ "De", "\\Delta" },
 	{ "ep", "\\epsilon" },
 	{ "vep", "\\varepsilon" },
-	{ "z", "\\zeta" },
 	{ "et", "\\eta" },
-	{ "th", "\\theta" },
-	{ "Th", "\\Theta" },
-	{ "vt", "\\vartheta" },
-	{ "i", "\\iota" },
-	{ "k", "\\kappa" },
-	{ "l", "\\lambda" },
-	{ "L", "\\Lambda" },
-	{ "m", "\\mu" },
-	{ "M", "\\Mu" },
-	{ "n", "\\nu" },
-	{ "x", "\\xi" },
-	{ "X", "\\Xi" },
+	{ "ga", "\\gamma" },
+	{ "Ga", "\\Gamma" },
+	{ "io", "\\iota" },
+	{ "ka", "\\kappa" },
+	{ "la", "\\lambda" },
+	{ "La", "\\Lambda" },
+	{ "mu", "\\mu" },
+	{ "Mu", "\\Mu" },
+	{ "nu", "\\nu" },
+	{ "om", "\\omega" },
+	{ "Om", "\\Omega" },
+	{ "ph", "\\phi" },
+	{ "vph", "\\varphi" },
+	{ "Ph", "\\Phi" },
 	{ "pi", "\\pi" },
 	{ "Pi", "\\Pi" },
-	{ "r", "\\rho" },
-	{ "s", "\\sigma" },
-	{ "S", "\\Sigma" },
-	{ "ta", "\\tau" },
-	{ "u", "\\upsilon" },
-	{ "U", "\\Upsilon" },
-	{ "ph", "\\phi" },
-	{ "Ph", "\\Phi" },
-	{ "vph", "\\varphi" },
-	{ "c", "\\chi" },
 	{ "ps", "\\psi" },
 	{ "Ps", "\\Psi" },
-	{ "o", "\\omega" },
-	{ "O", "\\Omega" },
+	{ "rh", "\\rho" },
+	{ "si", "\\sigma" },
+	{ "Si", "\\Sigma" },
+	{ "ta", "\\tau" },
+	{ "th", "\\theta" },
+	{ "vth", "\\vartheta" },
+	{ "Th", "\\Theta" },
+	{ "up", "\\upsilon" },
+	{ "Up", "\\Upsilon" },
+	{ "xi", "\\xi" },
+	{ "Xi", "\\Xi" },
+	{ "ze", "\\zeta" },
 }
 
 local greek_snippets = (function()
 	local snippets = {}
-	for _, v in ipairs(trig2) do
-		snippets[#snippets + 1] = s(
-			{ trig = trig1 .. v[1], snippetType = "autosnippet" },
-			t(v[2]),
-			{ condition = in_mathzone }
-		)
+	for _, trigger in ipairs(greek_letter_triggers) do
+		snippets[#snippets + 1] = s(trigger[1], t(trigger[2]), { condition = in_mathzone })
 	end
 	return snippets
 end)()
@@ -68,7 +62,7 @@ return vim.list_extend(greek_snippets, {
 
 	-- Chemical equation
 	-- Requires mhchem package
-	s({ trig = "ce", snippetType = "autosnippet" }, fmta("\\ce{<>}", { i(1) }), { condition = in_mathzone }),
+	s("ce", fmta("\\ce{<>}", { i(1) })),
 
 	-- Equation environment
 	s(
@@ -100,7 +94,7 @@ return vim.list_extend(greek_snippets, {
 
 	-- Array environment
 	s(
-		{ trig = "arr", snippetType = "autosnippet" },
+		"arr",
 		fmta(
 			[=[
             \begin{array}{<>}
@@ -114,7 +108,7 @@ return vim.list_extend(greek_snippets, {
 
 	-- Square bracket matrix environment
 	s(
-		{ trig = "bm", snippetType = "autosnippet" },
+		"bma",
 		fmta(
 			[=[
             \begin{bmatrix}
@@ -127,42 +121,38 @@ return vim.list_extend(greek_snippets, {
 	),
 
 	-- Expanding brackets
-	s({ trig = "lrb", snippetType = "autosnippet" }, fmta("\\left(<>\\right)", { i(1) }), { condition = in_mathzone }),
+	s("lrb", fmta("\\left(<>\\right)", { i(1) }), { condition = in_mathzone }),
 
 	-- Expanding square brackets
-	s({ trig = "lrs", snippetType = "autosnippet" }, fmta("\\left[<>\\right]", { i(1) }), { condition = in_mathzone }),
+	s("lrs", fmta("\\left[<>\\right]", { i(1) }), { condition = in_mathzone }),
 
 	-- Expanding curly brackets
-	s(
-		{ trig = "lrc", snippetType = "autosnippet" },
-		fmta("\\left\\{<>\\right\\}", { i(1) }),
-		{ condition = in_mathzone }
-	),
+	s("lrc", fmta("\\left\\{<>\\right\\}", { i(1) }), { condition = in_mathzone }),
 
 	-- Text formatting
-	s({ trig = "tt", snippetType = "autosnippet" }, fmta("\\text{<>}", { i(1) }), { condition = in_mathzone }),
+	s("tt", fmta("\\text{<>}", { i(1) }), { condition = in_mathzone }),
 
 	-- Bold formatting
-	s({ trig = "bf", snippetType = "autosnippet" }, fmta("\\mathbf{<>}", { i(1) }), { condition = in_mathzone }),
+	s("bf", fmta("\\mathbf{<>}", { i(1) }), { condition = in_mathzone }),
 
 	-- Bold formatting for symbols
-	s({ trig = "sbf", snippetType = "autosnippet" }, fmta("\\boldsymbol{<>}", { i(1) }), { condition = in_mathzone }),
+	s("sbf", fmta("\\boldsymbol{<>}", { i(1) }), { condition = in_mathzone }),
 
 	-- Roman math
-	s({ trig = "mrm", snippetType = "autosnippet" }, fmta("\\mathrm{<>}", { i(1) }), { condition = in_mathzone }),
+	s("mrm", fmta("\\mathrm{<>}", { i(1) }), { condition = in_mathzone }),
 
 	-- Roman text
-	s({ trig = "trm", snippetType = "autosnippet" }, fmta("\\textrm{<>}", { i(1) }), { condition = in_mathzone }),
+	s("trm", fmta("\\textrm{<>}", { i(1) }), { condition = in_mathzone }),
 
 	-- Calligraphic math
-	s({ trig = "cal", snippetType = "autosnippet" }, fmta("\\mathcal{<>}", { i(1) }), { condition = in_mathzone }),
+	s("cal", fmta("\\mathcal{<>}", { i(1) }), { condition = in_mathzone }),
 
 	-- Blackboard bold math
-	s({ trig = "bb", snippetType = "autosnippet" }, fmta("\\mathbb{<>}", { i(1) }), { condition = in_mathzone }),
+	s("bb", fmta("\\mathbb{<>}", { i(1) }), { condition = in_mathzone }),
 
 	-- Subscript
 	s(
-		{ trig = "([%a%)%]%}])ss", regTrig = true, wordTrig = false, snippetType = "autosnippet" },
+		{ trig = "([%a%)%]%}])ss", regTrig = true, wordTrig = false },
 		fmta("<>_{<>}", { f(function(_, snip)
 			return snip.captures[1]
 		end), i(1) }),
@@ -171,7 +161,7 @@ return vim.list_extend(greek_snippets, {
 
 	-- Text subscript
 	s(
-		{ trig = "([%a%)%]%}])ts", regTrig = true, wordTrig = false, snippetType = "autosnippet" },
+		{ trig = "([%a%)%]%}])ts", regTrig = true, wordTrig = false },
 		fmta("<>_{\\text{<>}}", { f(function(_, snip)
 			return snip.captures[1]
 		end), i(1) }),
@@ -180,32 +170,55 @@ return vim.list_extend(greek_snippets, {
 
 	-- Roman subscript
 	s(
-		{ trig = "([%a%)%]%}])rs", regTrig = true, wordTrig = false, snippetType = "autosnippet" },
+		{ trig = "([%a%)%]%}])rs", regTrig = true, wordTrig = false },
 		fmta("<>_{\\mathrm{<>}}", { f(function(_, snip)
 			return snip.captures[1]
 		end), i(1) }),
 		{ condition = in_mathzone }
 	),
 
-	-- Multiplication dot
-	s({ trig = "cd", snippetType = "autosnippet" }, t("\\cdot"), { condition = in_mathzone }),
-
-	-- Multiplication X
-	s({ trig = "xx", snippetType = "autosnippet" }, t("\\times"), { condition = in_mathzone }),
-
-	-- Division
-	s({ trig = "div", snippetType = "autosnippet" }, t("\\div"), { condition = in_mathzone }),
-
-	-- Fraction
+	-- Superscript
 	s(
-		{ trig = "ff", snippetType = "autosnippet" },
-		fmta("\\frac{<>}{<>}", { i(1), i(2) }),
+		{ trig = "([%a%d%)%]%}])Ss", regTrig = true, wordTrig = false },
+		fmta("<>^{<>}", { f(function(_, snip)
+			return snip.captures[1]
+		end), i(1) }),
 		{ condition = in_mathzone }
 	),
 
+	-- Text superscript
+	s(
+		{ trig = "([%a%d%)%]%}])tS", regTrig = true, wordTrig = false },
+		fmta("<>^{\\text{<>}}", { f(function(_, snip)
+			return snip.captures[1]
+		end), i(1) }),
+		{ condition = in_mathzone }
+	),
+
+	-- Roman superscript
+	s(
+		{ trig = "([%a%d%)%]%}])rS", regTrig = true, wordTrig = false },
+		fmta("<>^{\\mathrm{<>}}", { f(function(_, snip)
+			return snip.captures[1]
+		end), i(1) }),
+		{ condition = in_mathzone }
+	),
+
+	-- Multiplication dot
+	s("cd", t("\\cdot"), { condition = in_mathzone }),
+
+	-- Multiplication X
+	s("xx", t("\\times"), { condition = in_mathzone }),
+
+	-- Division
+	s("div", t("\\div"), { condition = in_mathzone }),
+
+	-- Fraction
+	s("ff", fmta("\\frac{<>}{<>}", { i(1), i(2) }), { condition = in_mathzone }),
+
 	-- Inverting
 	s(
-		{ trig = "([%a%d%)%]%}])iv", regTrig = true, wordTrig = false, snippetType = "autosnippet" },
+		{ trig = "([%a%d%)%]%}])iv", regTrig = true, wordTrig = false },
 		fmta("<>^{-1}", { f(function(_, snip)
 			return snip.captures[1]
 		end) }),
@@ -214,7 +227,7 @@ return vim.list_extend(greek_snippets, {
 
 	-- Squaring
 	s(
-		{ trig = "([%a%d%)%]%}])sr", regTrig = true, wordTrig = false, snippetType = "autosnippet" },
+		{ trig = "([%a%d%)%]%}])sr", regTrig = true, wordTrig = false },
 		fmta("<>^{2}", { f(function(_, snip)
 			return snip.captures[1]
 		end) }),
@@ -223,139 +236,110 @@ return vim.list_extend(greek_snippets, {
 
 	-- Cubing
 	s(
-		{ trig = "([%a%d%)%]%}])cb", regTrig = true, wordTrig = false, snippetType = "autosnippet" },
+		{ trig = "([%a%d%)%]%}])cb", regTrig = true, wordTrig = false },
 		fmta("<>^{3}", { f(function(_, snip)
 			return snip.captures[1]
 		end) }),
 		{ condition = in_mathzone }
 	),
 
-	-- Raising to a power
-	s(
-		{ trig = "([%a%d%)%]%}])rd", regTrig = true, wordTrig = false, snippetType = "autosnippet" },
-		fmta("<>^{<>}", { f(function(_, snip)
-			return snip.captures[1]
-		end), i(1) }),
-		{ condition = in_mathzone }
-	),
-
 	-- Square root
-	s({ trig = "sq", snippetType = "autosnippet" }, fmta("\\sqrt{<>}", { i(1) }), { condition = in_mathzone }),
+	s("sq", fmta("\\sqrt{<>}", { i(1) }), { condition = in_mathzone }),
 
 	-- Centered ellipses
-	s({ trig = "cel", snippetType = "autosnippet" }, t("\\cdots"), { condition = in_mathzone }),
+	s("cel", t("\\cdots"), { condition = in_mathzone }),
 
 	-- Ellipses
-	s({ trig = "el", snippetType = "autosnippet" }, t("\\ldots"), { condition = in_mathzone }),
+	s("el", t("\\ldots"), { condition = in_mathzone }),
 
 	-- Differential
 	-- Requires `\newcommand*\diff{\mathop{}\!\mathrm{d}}`
-	s({ trig = "df", snippetType = "autosnippet" }, t("\\diff"), { condition = in_mathzone }),
+	s("df", t("\\diff"), { condition = in_mathzone }),
 
 	-- Partial
-	s({ trig = "pt", snippetType = "autosnippet" }, t("\\partial"), { condition = in_mathzone }),
+	s("pt", t("\\partial"), { condition = in_mathzone }),
 
 	-- Higher order differential
 	-- Requires `\newcommand*\Diff[1]{\mathop{}\!\mathrm{d^#1}}`
-	s({ trig = "Df", snippetType = "autosnippet" }, fmta("\\Diff{<>}", { i(1) }), { condition = in_mathzone }),
+	s("Df", fmta("\\Diff{<>}", { i(1) }), { condition = in_mathzone }),
 
 	-- Higher order partial
-	s({ trig = "Pt", snippetType = "autosnippet" }, fmta("\\partial^{<>}", { i(1) }), { condition = in_mathzone }),
+	s("Pt", fmta("\\partial^{<>}", { i(1) }), { condition = in_mathzone }),
 
 	-- Derivative
 	-- Requires `\newcommand*\diff{\mathop{}\!\mathrm{d}}`
-	s(
-		{ trig = "dv", snippetType = "autosnippet" },
-		fmta("\\frac{\\diff <>}{\\diff <>}", { i(1), i(2) }),
-		{ condition = in_mathzone }
-	),
+	s("dv", fmta("\\frac{\\diff <>}{\\diff <>}", { i(1), i(2) }), { condition = in_mathzone }),
 
 	-- Partial derivative
-	s(
-		{ trig = "pd", snippetType = "autosnippet" },
-		fmta("\\frac{\\partial <>}{\\partial <>}", { i(1), i(2) }),
-		{ condition = in_mathzone }
-	),
+	s("pd", fmta("\\frac{\\partial <>}{\\partial <>}", { i(1), i(2) }), { condition = in_mathzone }),
 
 	-- Higher order derivative
 	-- Requires `\newcommand*\diff{\mathop{}\!\mathrm{d}}`
 	-- Requires `\newcommand*\Diff[1]{\mathop{}\!\mathrm{d^#1}}`
-	s(
-		{ trig = "Dv", snippetType = "autosnippet" },
-		fmta("\\frac{\\Diff{<>}<>}{\\diff <>^<>}", { i(1), i(2), i(3), rep(1) }),
-		{ condition = in_mathzone }
-	),
+	s("Dv", fmta("\\frac{\\Diff{<>}<>}{\\diff <>^<>}", { i(1), i(2), i(3), rep(1) }), { condition = in_mathzone }),
 
 	-- Higher order partial derivative
 	s(
-		{ trig = "Pd", snippetType = "autosnippet" },
+		"Pd",
 		fmta("\\frac{\\partial^{<>}<>}{\\partial <>^<>}", { i(1), i(2), i(3), rep(1) }),
 		{ condition = in_mathzone }
 	),
 
 	-- First derivative Newton's notation
-	s({ trig = "dot", snippetType = "autosnippet" }, fmta("\\dot{<>}", { i(1) }), { condition = in_mathzone }),
+	s("d", fmta("\\dot{<>}", { i(1) }), { condition = in_mathzone }),
 
 	-- Second derivative Newton's notation
-	s({ trig = "ddot", snippetType = "autosnippet" }, fmta("\\ddot{<>}", { i(1) }), { condition = in_mathzone }),
+	s("dd", fmta("\\ddot{<>}", { i(1) }), { condition = in_mathzone }),
 
 	-- Third derivative Newton's notation
-	s({ trig = "dddot", snippetType = "autosnippet" }, fmta("\\dddot{<>}", { i(1) }), { condition = in_mathzone }),
+	s("ddd", fmta("\\dddot{<>}", { i(1) }), { condition = in_mathzone }),
 
 	-- Integral
-	s({ trig = "int", snippetType = "autosnippet" }, t("\\int"), { condition = in_mathzone }),
+	s("i", t("\\int"), { condition = in_mathzone }),
 
 	-- Double integral
-	s({ trig = "iint", snippetType = "autosnippet" }, t("\\iint"), { condition = in_mathzone }),
+	s("ii", t("\\iint"), { condition = in_mathzone }),
 
 	-- Triple integral
-	s({ trig = "iiint", snippetType = "autosnippet" }, t("\\iiint"), { condition = in_mathzone }),
+	s("iii", t("\\iiint"), { condition = in_mathzone }),
 
 	-- Defined integral
-	s(
-		{ trig = "dint", snippetType = "autosnippet" },
-		fmta("\\int_{<>}^{<>}", { i(1), i(2) }),
-		{ condition = in_mathzone }
-	),
+	s("di", fmta("\\int_{<>}^{<>}", { i(1), i(2) }), { condition = in_mathzone }),
 
 	-- defined double integral
-	s(
-		{ trig = "diint", snippetType = "autosnippet" },
-		fmta("\\int_{<>}^{<>}\\int_{<>}^{<>}", { i(1), i(2), i(3), i(4) }),
-		{ condition = in_mathzone }
-	),
+	s("dii", fmta("\\int_{<>}^{<>}\\int_{<>}^{<>}", { i(1), i(2), i(3), i(4) }), { condition = in_mathzone }),
 
 	-- Defined triple integral
 	s(
-		{ trig = "diiint", snippetType = "autosnippet" },
+		"diii",
 		fmta("\\int_{<>}^{<>}\\int_{<>}^{<>}\\int_{<>}^{<>}", { i(1), i(2), i(3), i(4), i(5), i(6) }),
 		{ condition = in_mathzone }
 	),
 
 	-- Sine
-	s({ trig = "sin", snippetType = "autosnippet" }, t("\\sin"), { condition = in_mathzone }),
+	s("sin", t("\\sin"), { condition = in_mathzone }),
 
 	-- Cosine
-	s({ trig = "cos", snippetType = "autosnippet" }, t("\\cos"), { condition = in_mathzone }),
+	s("cos", t("\\cos"), { condition = in_mathzone }),
 
 	-- Tangent
-	s({ trig = "tan", snippetType = "autosnippet" }, t("\\tan"), { condition = in_mathzone }),
+	s("tan", t("\\tan"), { condition = in_mathzone }),
 
 	-- Arcsine
-	s({ trig = "asin", snippetType = "autosnippet" }, t("\\arcsin"), { condition = in_mathzone }),
+	s("asin", t("\\arcsin"), { condition = in_mathzone }),
 
 	-- Arccosine
-	s({ trig = "acos", snippetType = "autosnippet" }, t("\\arccos"), { condition = in_mathzone }),
+	s("acos", t("\\arccos"), { condition = in_mathzone }),
 
 	-- Arctangent
-	s({ trig = "atan", snippetType = "autosnippet" }, t("\\arctan"), { condition = in_mathzone }),
+	s("atan", t("\\arctan"), { condition = in_mathzone }),
 
 	-- Cosecant
-	s({ trig = "csc", snippetType = "autosnippet" }, t("\\csc"), { condition = in_mathzone }),
+	s("csc", t("\\csc"), { condition = in_mathzone }),
 
 	-- Secant
-	s({ trig = "sec", snippetType = "autosnippet" }, t("\\sec"), { condition = in_mathzone }),
+	s("sec", t("\\sec"), { condition = in_mathzone }),
 
 	-- Cotangent
-	s({ trig = "cot", snippetType = "autosnippet" }, t("\\cot"), { condition = in_mathzone }),
+	s("cot", t("\\cot"), { condition = in_mathzone }),
 })

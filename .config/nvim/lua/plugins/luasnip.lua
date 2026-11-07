@@ -9,12 +9,6 @@ return {
 		require("luasnip.loaders.from_lua").lazy_load()
 		luasnip.config.setup({ enable_autosnippets = true })
 
-		vim.keymap.set(
-			"n",
-			"<leader><leader>s",
-			':lua require("luasnip.loaders.from_lua").load()<CR>',
-			{ desc = "reload [S]nippets" }
-		)
 		vim.keymap.set({ "i", "s" }, "<C-l>", function()
 			if luasnip.expand_or_locally_jumpable() then
 				luasnip.expand_or_jump()
