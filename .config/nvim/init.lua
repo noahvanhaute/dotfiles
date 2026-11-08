@@ -66,6 +66,8 @@ vim.opt.completeopt = { "menu", "preinsert", "popup" }
 -- [[ Keymaps ]]
 
 vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>", { desc = "Clear search highlights with <Esc>" })
+vim.keymap.set("n", "<leader>m", "<cmd>make<CR>", { desc = "Build or run code with `makeprg`" })
+vim.keymap.set("n", "<leader>M", "<cmd>make!<CR>", { desc = "Same as <leader>m, but without jumping to first error" })
 
 -- [[ Autocommands ]]
 
