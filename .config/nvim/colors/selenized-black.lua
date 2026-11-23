@@ -268,8 +268,9 @@ local highlights = function(colors)
 	hi["@markup.heading"] = { fg = colors.fg_1, bold = true }
 	hi["@markup.link.url"] = "Underlined"
 
-	-- render-markdown.vim
-	hi["RenderMarkdownCode"] = { bg = colors.bg_1 }
+	hi["@code_span_delimiter"] = { fg = colors.dim_0 }
+	hi["@fenced_code_block_delimiter"] = { fg = colors.dim_0 }
+	hi["@language"] = { fg = colors.dim_0 }
 
 	for group, highlights in pairs(hi) do
 		highlight(group, highlights)
